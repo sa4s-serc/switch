@@ -1,0 +1,6 @@
+2023-06-20 16:06:07 DATA {'input_rate': 2, 'model': 'yolov5m'}
+2023-06-20 16:06:07 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-06-20 16:06:08 DATA {'input_rate': 2, 'model': 'yolov5m'}
+2023-06-20 16:06:08 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-06-20 16:06:09 DATA {'input_rate': 2, 'model': 'yolov5m'}
+2023-06-20 16:06:09 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}

@@ -19,6 +19,7 @@ app.add_middleware(
 )
 
 process_running = False
+running_processes = []
 
 def run_in_new_terminal(command):
     subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', command])
@@ -117,12 +118,22 @@ async def stopProcess():
         stop_process_in_terminal("monitor.py")
         stop_process_in_terminal("logs_to_es.py")
         stop_process_in_terminal("metrics_to_es.py")
+        stop_process_in_terminal("process.py")
         return {"message" : "Stoped succesful"}
     except Exception as e:
         print("Error stoping:", str(e))
         raise HTTPException(status_code=500, detail="An error occurred while stoping")
 
-    
+@app.post("/api/newProcess")
+async def stopProcess():
+    try:
+        run_in_new_terminal('python3 process.py')
+        return {"message" : "Process succesful restarted"}
+    except Exception as e:
+        print("Error stoping:", str(e))
+        raise HTTPException(status_code=500, detail="An error occurred while stoping")
+
+
 @app.post("/api/downloadData")
 async def startDownload():
     try:

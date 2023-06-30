@@ -40,7 +40,9 @@ def process_csv_file():
             detection_boxes = row[5]
             model_processing_time = row[6]
             image_processing_time = row[7]
-         
+            absolute_time__from_start = row[8]
+            utility  = row[9]
+
             # Extract other fields as needed
 
             # Create a dictionary to represent the log entry
@@ -52,7 +54,9 @@ def process_csv_file():
                 'cpu': cpu,
                 'detection_boxes': detection_boxes,
                 'model_processing_time' : model_processing_time,
-                'image_processing_time' : image_processing_time
+                'image_processing_time' : image_processing_time,
+                'absolute_time_from_start': absolute_time__from_start,
+                'utility': utility
                 # Add other fields as needed
             }
 
@@ -73,13 +77,15 @@ if not es.indices.exists(index=index_name):
         "mappings": {
             "properties": {
                 "timestamp": {"type": "date"},
-                "log_id": {"type": "keyword"},
+                "log_id": {"type": "integer"},
                 "confidence": {"type": "float"},
                 "model_name": {"type": "keyword"},
                 "cpu": {"type": "float"},
                 "detection_boxes": {"type": "integer"},
                 "model_processing_time": {"type": "float"},
-                "image_processing_time": {"type": "float"}
+                "image_processing_time": {"type": "float"},
+                "absolute_time_from_start": {"type": "float"},
+                "utility": {"type": "float"}
             }
         }
     }

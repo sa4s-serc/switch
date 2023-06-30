@@ -21,8 +21,20 @@ app.add_middleware(
 process_running = False
 running_processes = []
 
+def run_in_terminal(command):
+    global running_processes
+    command_list = command.split()
+    running_processes.append(subprocess.Popen(command_list))
+
 def run_in_new_terminal(command):
     subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', command])
+
+def stop_proccess():
+    global running_processes
+    for script in running_processes:
+        script.terminate()
+    running_processes.clear()
+    return {'message': 'Script stopped'}
 
 def stop_process_in_terminal(file):
     command = f"pgrep -f {file}"
@@ -77,12 +89,12 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         IMAGES_FOLDER = IMAGES_FOLDER[:-4]
         print(CSV_FILE , IMAGES_FOLDER)
 
-        run_in_new_terminal('python3 App.py')
+        run_in_terminal('python3 App.py')
         time.sleep(0.5)
         run_in_new_terminal(f'export CSV_FILE="{CSV_FILE}" && export IMAGES_FOLDER="{IMAGES_FOLDER}" && locust -f Request_send.py --headless  --host=http://localhost:5000/v1 --users 1 --spawn-rate 1')
-        run_in_new_terminal('python3 monitor.py')
-        run_in_new_terminal('python3 logs_to_es.py')
-        run_in_new_terminal('python3 metrics_to_es.py')
+        run_in_terminal('python3 monitor.py')
+        run_in_terminal('python3 logs_to_es.py')
+        run_in_terminal('python3 metrics_to_es.py')
 
         return {"message": "Files uploaded and processed successfully."}
 
@@ -100,7 +112,7 @@ async def execute_python_script():
     try:
         # print("Ready to process file")
         # Start the process.py script
-        run_in_new_terminal('python3 process.py')
+        run_in_terminal('python3 process.py')
         # process_path = "/home/arya/Desktop/SERC/ArchML-main/NAVIE/process2.py"
         # subprocess.Popen(["python3", "-u", process_path])
         process_running = True
@@ -114,20 +126,21 @@ async def execute_python_script():
 async def stopProcess():
     try:
         stop_process_in_terminal("Request_send.py")
-        stop_process_in_terminal("App.py")
-        stop_process_in_terminal("monitor.py")
-        stop_process_in_terminal("logs_to_es.py")
-        stop_process_in_terminal("metrics_to_es.py")
-        stop_process_in_terminal("process.py")
+        stop_proccess()
+        # stop_process_in_terminal("App.py")
+        # stop_process_in_terminal("monitor.py")
+        # stop_process_in_terminal("logs_to_es.py")
+        # stop_process_in_terminal("metrics_to_es.py")
+        # stop_process_in_terminal("process.py")
         return {"message" : "Stoped succesful"}
     except Exception as e:
         print("Error stoping:", str(e))
         raise HTTPException(status_code=500, detail="An error occurred while stoping")
 
 @app.post("/api/newProcess")
-async def stopProcess():
+async def restartProcess():
     try:
-        run_in_new_terminal('python3 process.py')
+        run_in_terminal('python3 process.py')
         return {"message" : "Process succesful restarted"}
     except Exception as e:
         print("Error stoping:", str(e))

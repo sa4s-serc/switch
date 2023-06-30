@@ -38,6 +38,6 @@ class MyUser(HttpUser):
 
         spawn(self.client.post, "/object-detection", files=files)
 
-        time.sleep(self.wait_times[self.n]*3)
+        time.sleep(self.wait_times[self.n]*2)
 
         self.n += 1

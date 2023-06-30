@@ -11,15 +11,46 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import scan
 import base64
 import datetime
-import time
-import asyncio
-import threading
+ 
 
 models = {}
 total_processed = 0
 global_start_time = 0
 
 metric_file_name = "metrics.csv"
+
+
+def call_utility(r , C):
+    Rmax = 1  # Maximum acceptable response time
+    Rmin = 0.1  # Minimum acceptable response time
+    Cmax = 1  # Maximum acceptable confidence score
+    Cmin = 0.5 # Minimum acceptable confidence score
+
+    # Penalties for exceeding thresholds
+    pdv = 1  # Penalty for exceeding the response time threshold
+    pev = 1  # Penalty for exceeding the confidence score threshold
+
+    # Weights for the response time and confidence score in the utility function
+    we = 0.5 #Confidence
+    wd = 0.5 #Response Time
+
+    if r > Rmax:
+        Tτ = (Rmax - r) * pdv
+    elif Rmin <= r <= Rmax:
+        Tτ = r
+    else:  # r < Rmin
+        Tτ = (r - Rmin) * pdv
+
+
+    if C > Cmax:
+        Eτ = (Cmax - C) * pev
+    elif Cmin <= C <= Cmax:
+        Eτ = C
+    else:  # C < Cmin
+        Eτ = (C - Cmin) * pev
+
+    utility_values = we * Eτ + wd * Tτ
+    return utility_values
 
 def get_current():
     df = pd.read_csv('model.csv', header=None)
@@ -88,8 +119,11 @@ def process_row(im_bytes, start_time):
             # print("To write in log file.\n")
             f = open(metric_file_name, "a")
             ts = datetime.datetime.now().isoformat()
+
+            utility = call_utility(start_time , avg_conf )
+
             f.write(
-                f'{ts},{total_processed},{avg_conf},{current_model},{current_cpu},{current_boxes},{current_time},{start_time},{absolute_time}\n')
+                f'{ts},{total_processed},{avg_conf},{current_model},{current_cpu},{current_boxes},{current_time},{start_time},{absolute_time},{utility}\n')
             f.close()
 
             # save_result(response , total_processed-1)

@@ -1,6 +1,36 @@
-2023-06-20 16:06:07 DATA {'input_rate': 2, 'model': 'yolov5m'}
-2023-06-20 16:06:07 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
-2023-06-20 16:06:08 DATA {'input_rate': 2, 'model': 'yolov5m'}
-2023-06-20 16:06:08 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
-2023-06-20 16:06:09 DATA {'input_rate': 2, 'model': 'yolov5m'}
-2023-06-20 16:06:09 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-07-06 09:41:47 DATA {'Finished Processing File': 29}
+2023-07-06 09:41:47 DATA {'Processing File': 30}
+2023-07-06 09:41:47 DATA {'User Request Time': 1688616691.1493802, 'model': 'yolov5s'}
+2023-07-06 09:41:48 DATA {'input_rate': 6, 'model': 'yolov5s'}
+2023-07-06 09:41:48 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-07-06 09:41:49 DATA {'Finished Processing File': 30}
+2023-07-06 09:41:49 DATA {'Processing File': 31}
+2023-07-06 09:41:49 DATA {'User Request Time': 1688616691.5697367, 'model': 'yolov5s'}
+2023-07-06 09:41:49 DATA {'input_rate': 3, 'model': 'yolov5s'}
+2023-07-06 09:41:49 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-07-06 09:41:49 DATA {'Finished Processing File': 31}
+2023-07-06 09:41:49 DATA {'Processing File': 32}
+2023-07-06 09:41:49 DATA {'User Request Time': 1688616691.8824246, 'model': 'yolov5s'}
+2023-07-06 09:41:50 DATA {'Finished Processing File': 32}
+2023-07-06 09:41:50 DATA {'Processing File': 33}
+2023-07-06 09:41:50 DATA {'User Request Time': 1688616692.2089076, 'model': 'yolov5s'}
+2023-07-06 09:41:50 DATA {'Finished Processing File': 33}
+2023-07-06 09:41:50 DATA {'Processing File': 34}
+2023-07-06 09:41:50 DATA {'User Request Time': 1688616692.5548642, 'model': 'yolov5s'}
+2023-07-06 09:41:50 DATA {'input_rate': 3, 'model': 'yolov5s'}
+2023-07-06 09:41:50 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-07-06 09:41:50 INFO {'Component': 'Analyzer', 'Action': 'Creating Planner object'}
+2023-07-06 09:41:50 INFO {'Component': 'Planner', 'Action': 'Planner Object created'}
+2023-07-06 09:41:50 INFO {'Component': 'Planner', 'Action': 'Generating the adaptation plan'}
+2023-07-06 09:41:50 INFO {'Component': 'Executor', 'Action': 'Performing Action'}
+2023-07-06 09:41:50 DATA {'Action': 3}
+2023-07-06 09:41:50 INFO {'Component': 'Executor', 'Action': 'Switching to model YOLOV5m'}
+2023-07-06 09:41:50 INFO {'Component': 'Executor', 'Action': 'Finished Action 1'}
+2023-07-06 09:41:50 DATA {'Finished Processing File': 34}
+2023-07-06 09:41:50 DATA {'Processing File': 35}
+2023-07-06 09:41:50 DATA {'User Request Time': 1688616692.9807289, 'model': 'yolov5m'}
+2023-07-06 09:41:51 DATA {'input_rate': 3, 'model': 'yolov5m'}
+2023-07-06 09:41:51 INFO {'Component': 'Analyzer', 'Action': 'Performing the analysis'}
+2023-07-06 09:41:51 DATA {'Finished Processing File': 35}
+2023-07-06 09:41:51 DATA {'Processing File': 36}
+2023-07-06 09:41:51 DATA {'User Request Time': 1688616693.3472219, 'model': 'yolov5m'}

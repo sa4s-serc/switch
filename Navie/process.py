@@ -194,7 +194,6 @@ if __name__ == '__main__':
 
     models = {}
     for m in {'yolov5n', 'yolov5s', 'yolov5m', 'yolov5l', 'yolov5x'}:
-    # for m in {'yolov5n', 'yolov5s', 'yolov5m'}:
         models[m] = torch.hub.load(
             'ultralytics/yolov5', m, force_reload=True, skip_validation=True)
 

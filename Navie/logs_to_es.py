@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 from elasticsearch import Elasticsearch
 import time
-
+from Custom_Logger import logger
 # Configure Elasticsearch connection
 es = Elasticsearch(['localhost'])  # Replace with your Elasticsearch host
 
@@ -14,23 +14,28 @@ log_pattern = re.compile(r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) (INFO|DATA) (.*
 index_name ="new_logs"
 # Function to convert log data to JSON format
 def parse_log_data(line):
-    match = log_pattern.match(line)
-    if match:
-        timestamp = datetime.strptime(match.group(1), '%Y-%m-%d %H:%M:%S')
-        log_level = match.group(2)
-        log_data = match.group(3)
+    try: 
+        match = log_pattern.match(line)
+        if match:
+            timestamp = datetime.strptime(match.group(1), '%Y-%m-%d %H:%M:%S')
+            log_level = match.group(2)
+            log_data = match.group(3)
 
-        try:
-            log_data = json.loads(log_data.replace("'", '"'))
-        except json.JSONDecodeError:
-            log_data = {}
+            try:
+                log_data = json.loads(log_data.replace("'", '"'))
+            except json.JSONDecodeError:
+                log_data = {}
 
-        return {
-            'timestamp': timestamp,
-            'log_level': log_level,
-            **log_data  # Unpack log_data dictionary as separate key-value pairs
-        }
-
+            return {
+                'timestamp': timestamp,
+                'log_level': log_level,
+                **log_data  # Unpack log_data dictionary as separate key-value pairs
+            }
+    except Exception as e:
+        str = f"Failed to upload logs data to ES: {str(e)}"
+        logger.error(str)
+        print(str)
+        
     return None
 
 # Function to clear log file

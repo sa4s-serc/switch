@@ -48,11 +48,10 @@ const Home = () => {
       if (response.ok) {
         console.log('Files uploaded successfully.');
         setShowDashBoard(true);
-        var url = 'http://localhost:5601/app/dashboards#/list?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now%2Fd,to:now%2Fd))'
-
-        if(window.confirm("View Dashboard")){
-          window.open(url);
-       }
+        // var url = 'http://localhost:5601/app/dashboards#/list?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now%2Fd,to:now%2Fd))'
+      //   if(window.confirm("View Dashboard")){
+      //     window.open(url);
+      //  }
         
       } else {
         console.error('Failed to upload files.');
@@ -79,7 +78,23 @@ const Home = () => {
     }
   };
   
-  const newProcess =()=>{
+  const newProcess = async ()=>{
+
+    try{
+      const response = await fetch('http://localhost:3001/api/newProcess', {
+          method: 'POST'
+        });
+      if(response.ok){
+        console.log("Restartes process");
+        setstopProcessing(true);
+      }
+      else{
+        console.log("Failed to restart program")
+      }
+    }catch(error){
+      console.error('Error during fstoping program:', error);
+    }
+
     setShowDashBoard(false);
     setstopProcessing(false);
   }
@@ -140,14 +155,16 @@ const Home = () => {
             Stop Process
           </button>}
           {stopProcessing && 
-          <div>
-          <button className="btn btn-primary" onClick={newProcess}>
+          <p>
+            <button className="btn btn-primary" onClick={downloadData}>
+            Download Data
+            </button>
+          <br />
+          <br />
+            <button className="btn btn-primary" onClick={newProcess}>
             New Process
-          </button> </div> &&
-          <div>
-          <button className="btn btn-primary" onClick={downloadData}>
-          Download Data
-          </button></div>
+            </button> 
+          </p>
           }
         </div>
         }

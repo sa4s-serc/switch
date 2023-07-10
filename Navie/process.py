@@ -8,7 +8,6 @@ import imghdr
 import os
 from Custom_Logger import logger
 from elasticsearch import Elasticsearch
-from elasticsearch.helpers import scan
 import base64
 import datetime
  

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import zipfile
@@ -6,10 +6,11 @@ import os
 import subprocess
 import time
 from elasticsearch import Elasticsearch
-
+from typing import Dict
+import csv
 es = Elasticsearch(['localhost'])
 app = FastAPI()
-
+sys_approch = "NAIVE"
 # Enable CORS for all routes
 app.add_middleware(
     CORSMiddleware,
@@ -69,8 +70,11 @@ def stop_process_in_terminal(file):
         print("Error:", error.decode())
 
 @app.post("/api/upload")
-async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = File(...)):
+async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = File(...),  approch: str = Form(...)):
+    global sys_approch
     try:
+        print(approch)
+        sys_approch = approch
         # Create a directory to store the uploaded files
         upload_dir = "uploads"
         shutil.rmtree(upload_dir, ignore_errors=True)
@@ -114,7 +118,12 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         #Locust to send Request
         run_in_new_terminal(f'export CSV_FILE="{CSV_FILE}" && export IMAGES_FOLDER="{IMAGES_FOLDER}" && locust -f Request_send.py --headless  --host=http://localhost:5000/v1 --users 1 --spawn-rate 1')
         #to start monitoring
-        run_in_terminal('python3 monitor.py')
+        if(approch == "NAIVE"):
+            print("RUunning monitor.py---------------------")
+            run_in_terminal('python3 monitor.py')
+        elif(approch == "AdaMLs"):   
+            print("RUunning monitor_ada.py---------------------")
+            run_in_new_terminal('python3 monitor_ada.py')
         #upload data to ES
         run_in_terminal('python3 logs_to_es.py')
         run_in_terminal('python3 metrics_to_es.py')
@@ -236,9 +245,53 @@ async def latest_log_data():
         print("Error stoping:", str(e))
         raise HTTPException(status_code=500, detail="An error occurred while stoping")
 
-        
+
+@app.post("/apichangeKnowledge")
+async def change_knowledge(data: Dict[str, str]):
+
+    try:
+
+        row1 = [ '0',data['yolov5nLower'],data['yolov5nUpper']]
+        row2 = [ '1',data['yolov5sLower'],data['yolov5sUpper']]
+        row3 = [ '2',data['yolov5mLower'],data['yolov5mUpper']]
+        row4 = [ '3',data['yolov5lLower'],data['yolov5lUpper']]
+        row5 = [ '4',data['yolov5xLower'],data['yolov5xUpper']]
+
+        print(row1,row2,row3,row4,row5)
+        with open('knowledge.csv', 'w') as file:
+            writer = csv.writer(file)
+            writer.writerow(row1)
+            writer.writerow(row2)
+            writer.writerow(row3)
+            writer.writerow(row4)
+            writer.writerow(row5)
+        return {"message" : "Changed knowledge file "}
+       
+    except Exception as e:
+        print("Error stoping:", str(e))
+        raise HTTPException(status_code=500, detail="An error occurred updating knowledge file")
 
 
+@app.post("/useNaiveKnowledge")
+async def useNaive_knowledge():
+
+    try:
+        input_file = 'naive_knowledge.csv'
+        output_file = 'knowledge.csv'
+        with open(input_file, 'r') as input_csv, open(output_file, 'w', newline='') as output_csv:
+            reader = csv.reader(input_csv)
+            writer = csv.writer(output_csv)
+
+        # Copy each row from the input CSV to the output CSV
+            for row in reader:
+                writer.writerow(row)
+        return {"message": "Naive knowledge registered"}
+        print("CSV data copied successfully.")
+
+    except Exception as e:
+        print("Error stoping:", str(e))
+        raise HTTPException(status_code=500, detail="An error occurred updating knowledge file")
+    
 
 if __name__ == "__main__":
     import uvicorn

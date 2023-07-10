@@ -1,5 +1,4 @@
 # naive
-import requests
 from Analyzer import Analyzer
 import time
 import pandas as pd

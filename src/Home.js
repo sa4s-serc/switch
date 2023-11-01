@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import JSZip from 'jszip';
 import Dashboard from './Dashboard';
-
+import User_approch from './User_approch'
 
 const Home = () => {
   const [selectedZipFile, setSelectedZipFile] = useState(null);
   const [selectedCSVFile, setSelectedCSVFile] = useState(null);
   const [showDashBoard ,  setShowDashBoard] = useState(false);
   const [stopProcessing , setstopProcessing] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
+
 
   const handleZipFileChange = (event) => {
     const file = event.target.files[0];
@@ -38,6 +40,7 @@ const Home = () => {
       const formData = new FormData();
       formData.append('zipFile', selectedZipFile);
       formData.append('csvFile', selectedCSVFile);
+      formData.append('approch', selectedOption);
 
       const response = await fetch('http://localhost:3001/api/upload', {
         method: 'POST',
@@ -116,6 +119,27 @@ const Home = () => {
     }
   }
 
+  const handleSelectChange = async(event) => {
+    setSelectedOption(event.target.value);
+    console.log(event.target.value)
+    if(event.target.value === "NAIVE"){
+      try{
+        const response = await fetch('http://localhost:3001/useNaiveKnowledge', {
+          method: 'POST'
+        });
+        if(response.ok){
+          console.log("NAIVE knowledge updated");
+          // alert("Downloaded Succesfully")
+        }
+        else{
+          console.log("Failed load NAIVE knowledge")
+        }
+      }catch(error){
+        console.error('Error during loading NAIVE knowledge:', error);
+      }
+    }
+  };
+
   return (
     <div className="container">
       {!showDashBoard && <div>
@@ -141,6 +165,25 @@ const Home = () => {
             id="csvFileInput"
             onChange={handleCSVFileChange}
           />
+        </div>
+        <div>
+      
+        <div className="mb-3">
+          <select className="selectpicker" value={selectedOption} onChange={handleSelectChange}>
+            <option value="">Select an option</option>
+            <option value="NAIVE">NAIVE</option>
+            <option value="AdaMLs">AdaMLS</option>
+            <option value="Try Your Own">Try Your Own</option>
+          </select>
+        </div>
+        
+        {selectedOption === "Try Your Own" &&
+
+        <div className="mb-3">
+            <User_approch/>
+        </div>
+        }
+
         </div>
         <button className="btn btn-primary" onClick={handleUpload}>
           Upload Files

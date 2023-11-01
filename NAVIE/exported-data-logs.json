@@ -1,0 +1,1820 @@
+[
+  {
+    "timestamp": "2023-11-01T19:44:38",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:38",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Processing File": 221
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Finished Processing File": 220
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Processing File": 222
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Finished Processing File": 221
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Processing File": 223
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Finished Processing File": 222
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Processing File": 224
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "Finished Processing File": 223
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:39",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "Processing File": 225
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "Finished Processing File": 224
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "Processing File": 226
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "Finished Processing File": 225
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "Processing File": 227
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "Finished Processing File": 226
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:40",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "Processing File": 228
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "Finished Processing File": 227
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "Processing File": 229
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "Finished Processing File": 228
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "Processing File": 230
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "Finished Processing File": 229
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:44:41",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:45:47",
+    "log_level": "INFO"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:04",
+    "log_level": "INFO",
+    "Component": "Monitor",
+    "Action": "Started the adaptation effector module"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:05",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:05",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:16",
+    "log_level": "DATA",
+    "Finished Processing File": 5
+  },
+  {
+    "timestamp": "2023-11-01T19:46:16",
+    "log_level": "DATA",
+    "Processing File": 6
+  },
+  {
+    "timestamp": "2023-11-01T19:46:17",
+    "log_level": "DATA",
+    "User Request Time": 1698848167.2457962,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:17",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:17",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:18",
+    "log_level": "DATA",
+    "Finished Processing File": 6
+  },
+  {
+    "timestamp": "2023-11-01T19:46:18",
+    "log_level": "DATA",
+    "Processing File": 7
+  },
+  {
+    "timestamp": "2023-11-01T19:46:18",
+    "log_level": "DATA",
+    "User Request Time": 1698848167.4669642,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:18",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:18",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:19",
+    "log_level": "DATA",
+    "Finished Processing File": 7
+  },
+  {
+    "timestamp": "2023-11-01T19:46:19",
+    "log_level": "DATA",
+    "Processing File": 8
+  },
+  {
+    "timestamp": "2023-11-01T19:46:19",
+    "log_level": "DATA",
+    "User Request Time": 1698848167.6653993,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:19",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:19",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:20",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:20",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:20",
+    "log_level": "DATA",
+    "Finished Processing File": 8
+  },
+  {
+    "timestamp": "2023-11-01T19:46:20",
+    "log_level": "DATA",
+    "Processing File": 9
+  },
+  {
+    "timestamp": "2023-11-01T19:46:20",
+    "log_level": "DATA",
+    "User Request Time": 1698848167.9570885,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:21",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:21",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:13",
+    "log_level": "DATA",
+    "Processing File": 3
+  },
+  {
+    "timestamp": "2023-11-01T19:46:13",
+    "log_level": "DATA",
+    "User Request Time": 1698848166.2879329,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:13",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:13",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:14",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:14",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:14",
+    "log_level": "DATA",
+    "Finished Processing File": 3
+  },
+  {
+    "timestamp": "2023-11-01T19:46:14",
+    "log_level": "DATA",
+    "Processing File": 4
+  },
+  {
+    "timestamp": "2023-11-01T19:46:14",
+    "log_level": "DATA",
+    "User Request Time": 1698848166.5620549,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:15",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:15",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:15",
+    "log_level": "DATA",
+    "Finished Processing File": 4
+  },
+  {
+    "timestamp": "2023-11-01T19:46:15",
+    "log_level": "DATA",
+    "Processing File": 5
+  },
+  {
+    "timestamp": "2023-11-01T19:46:15",
+    "log_level": "DATA",
+    "User Request Time": 1698848167.0855677,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:06",
+    "log_level": "DATA",
+    "input_rate": 0,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:06",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:07",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:07",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:08",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:08",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:09",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:09",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:10",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:10",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:10",
+    "log_level": "DATA",
+    "Finished Processing File": 0
+  },
+  {
+    "timestamp": "2023-11-01T19:46:10",
+    "log_level": "DATA",
+    "Processing File": 1
+  },
+  {
+    "timestamp": "2023-11-01T19:46:10",
+    "log_level": "DATA",
+    "User Request Time": 1698848165.680223,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:22",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:22",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:23",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:23",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:23",
+    "log_level": "DATA",
+    "Finished Processing File": 10
+  },
+  {
+    "timestamp": "2023-11-01T19:46:23",
+    "log_level": "DATA",
+    "Processing File": 11
+  },
+  {
+    "timestamp": "2023-11-01T19:46:23",
+    "log_level": "DATA",
+    "User Request Time": 1698848168.5351996,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:24",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:11",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:11",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:11",
+    "log_level": "DATA",
+    "Finished Processing File": 1
+  },
+  {
+    "timestamp": "2023-11-01T19:46:11",
+    "log_level": "DATA",
+    "Processing File": 2
+  },
+  {
+    "timestamp": "2023-11-01T19:46:11",
+    "log_level": "DATA",
+    "User Request Time": 1698848166.02625,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:12",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:12",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:13",
+    "log_level": "DATA",
+    "Finished Processing File": 2
+  },
+  {
+    "timestamp": "2023-11-01T19:46:24",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:25",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:25",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:26",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:26",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:28",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:28",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:29",
+    "log_level": "DATA",
+    "Finished Processing File": 11
+  },
+  {
+    "timestamp": "2023-11-01T19:46:29",
+    "log_level": "DATA",
+    "Processing File": 12
+  },
+  {
+    "timestamp": "2023-11-01T19:46:29",
+    "log_level": "DATA",
+    "User Request Time": 1698848168.8225925,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:29",
+    "log_level": "DATA",
+    "input_rate": 5,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:29",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:30",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:30",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:30",
+    "log_level": "DATA",
+    "Finished Processing File": 12
+  },
+  {
+    "timestamp": "2023-11-01T19:46:31",
+    "log_level": "DATA",
+    "Processing File": 13
+  },
+  {
+    "timestamp": "2023-11-01T19:46:31",
+    "log_level": "DATA",
+    "User Request Time": 1698848169.0973158,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:31",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:31",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:33",
+    "log_level": "DATA",
+    "Finished Processing File": 13
+  },
+  {
+    "timestamp": "2023-11-01T19:46:33",
+    "log_level": "DATA",
+    "Processing File": 14
+  },
+  {
+    "timestamp": "2023-11-01T19:46:33",
+    "log_level": "DATA",
+    "User Request Time": 1698848169.3768847,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:33",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:33",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:34",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:34",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:35",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:35",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:36",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:36",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:37",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:37",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:38",
+    "log_level": "DATA",
+    "Finished Processing File": 14
+  },
+  {
+    "timestamp": "2023-11-01T19:46:38",
+    "log_level": "DATA",
+    "Processing File": 15
+  },
+  {
+    "timestamp": "2023-11-01T19:46:38",
+    "log_level": "DATA",
+    "User Request Time": 1698848169.6400013,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:38",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:38",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:39",
+    "log_level": "DATA",
+    "Finished Processing File": 15
+  },
+  {
+    "timestamp": "2023-11-01T19:46:39",
+    "log_level": "DATA",
+    "Processing File": 16
+  },
+  {
+    "timestamp": "2023-11-01T19:46:39",
+    "log_level": "DATA",
+    "User Request Time": 1698848169.9095356,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:40",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:40",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:41",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:41",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:42",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:42",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:43",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:43",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:45",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:45",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:46",
+    "log_level": "DATA",
+    "input_rate": 7,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:46",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:47",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:47",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:47",
+    "log_level": "DATA",
+    "Finished Processing File": 16
+  },
+  {
+    "timestamp": "2023-11-01T19:46:47",
+    "log_level": "DATA",
+    "Processing File": 17
+  },
+  {
+    "timestamp": "2023-11-01T19:46:47",
+    "log_level": "DATA",
+    "User Request Time": 1698848170.179204,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:48",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:48",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:50",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:50",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:51",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:51",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:52",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:52",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:53",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:53",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:54",
+    "log_level": "DATA",
+    "Finished Processing File": 17
+  },
+  {
+    "timestamp": "2023-11-01T19:46:54",
+    "log_level": "DATA",
+    "Processing File": 18
+  },
+  {
+    "timestamp": "2023-11-01T19:46:54",
+    "log_level": "DATA",
+    "User Request Time": 1698848170.456893,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:54",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:54",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:55",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:55",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:56",
+    "log_level": "DATA",
+    "Finished Processing File": 18
+  },
+  {
+    "timestamp": "2023-11-01T19:46:56",
+    "log_level": "DATA",
+    "Processing File": 19
+  },
+  {
+    "timestamp": "2023-11-01T19:46:56",
+    "log_level": "DATA",
+    "User Request Time": 1698848170.7408624,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:56",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:56",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:57",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:57",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:58",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:58",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:59",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:46:59",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:01",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:01",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:02",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:02",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:02",
+    "log_level": "DATA",
+    "Finished Processing File": 19
+  },
+  {
+    "timestamp": "2023-11-01T19:47:02",
+    "log_level": "DATA",
+    "Processing File": 20
+  },
+  {
+    "timestamp": "2023-11-01T19:47:02",
+    "log_level": "DATA",
+    "User Request Time": 1698848171.0192287,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:03",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:03",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:03",
+    "log_level": "DATA",
+    "Finished Processing File": 20
+  },
+  {
+    "timestamp": "2023-11-01T19:47:03",
+    "log_level": "DATA",
+    "Processing File": 21
+  },
+  {
+    "timestamp": "2023-11-01T19:47:03",
+    "log_level": "DATA",
+    "User Request Time": 1698848171.3009567,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:04",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:04",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:05",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:05",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:07",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:07",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:08",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:08",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:09",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:09",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:09",
+    "log_level": "DATA",
+    "Finished Processing File": 21
+  },
+  {
+    "timestamp": "2023-11-01T19:47:09",
+    "log_level": "DATA",
+    "Processing File": 22
+  },
+  {
+    "timestamp": "2023-11-01T19:47:09",
+    "log_level": "DATA",
+    "User Request Time": 1698848171.5867853,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:10",
+    "log_level": "DATA",
+    "input_rate": 5,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:10",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:11",
+    "log_level": "DATA",
+    "Finished Processing File": 22
+  },
+  {
+    "timestamp": "2023-11-01T19:47:11",
+    "log_level": "DATA",
+    "Processing File": 23
+  },
+  {
+    "timestamp": "2023-11-01T19:47:11",
+    "log_level": "DATA",
+    "User Request Time": 1698848171.8687992,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:11",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:11",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:12",
+    "log_level": "DATA",
+    "Finished Processing File": 23
+  },
+  {
+    "timestamp": "2023-11-01T19:47:12",
+    "log_level": "DATA",
+    "Processing File": 24
+  },
+  {
+    "timestamp": "2023-11-01T19:47:12",
+    "log_level": "DATA",
+    "User Request Time": 1698848172.153285,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:12",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:12",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:13",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:13",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:14",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:14",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:15",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:15",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:16",
+    "log_level": "DATA",
+    "Finished Processing File": 24
+  },
+  {
+    "timestamp": "2023-11-01T19:47:16",
+    "log_level": "DATA",
+    "Processing File": 25
+  },
+  {
+    "timestamp": "2023-11-01T19:47:16",
+    "log_level": "DATA",
+    "User Request Time": 1698848172.4511862,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:16",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:16",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:17",
+    "log_level": "DATA",
+    "input_rate": 5,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:17",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:18",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:18",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:19",
+    "log_level": "DATA",
+    "Finished Processing File": 25
+  },
+  {
+    "timestamp": "2023-11-01T19:47:19",
+    "log_level": "DATA",
+    "Processing File": 26
+  },
+  {
+    "timestamp": "2023-11-01T19:47:19",
+    "log_level": "DATA",
+    "User Request Time": 1698848172.7335591,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:19",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:19",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:20",
+    "log_level": "DATA",
+    "Finished Processing File": 26
+  },
+  {
+    "timestamp": "2023-11-01T19:47:20",
+    "log_level": "DATA",
+    "Processing File": 27
+  },
+  {
+    "timestamp": "2023-11-01T19:47:20",
+    "log_level": "DATA",
+    "User Request Time": 1698848173.007975,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:20",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:20",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:22",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:22",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:24",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:24",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:25",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:25",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:26",
+    "log_level": "DATA",
+    "Finished Processing File": 27
+  },
+  {
+    "timestamp": "2023-11-01T19:47:26",
+    "log_level": "DATA",
+    "Processing File": 28
+  },
+  {
+    "timestamp": "2023-11-01T19:47:26",
+    "log_level": "DATA",
+    "User Request Time": 1698848173.3012676,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:26",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:26",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:27",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:27",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:27",
+    "log_level": "DATA",
+    "Finished Processing File": 28
+  },
+  {
+    "timestamp": "2023-11-01T19:47:27",
+    "log_level": "DATA",
+    "Processing File": 29
+  },
+  {
+    "timestamp": "2023-11-01T19:47:27",
+    "log_level": "DATA",
+    "User Request Time": 1698848173.5703547,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:28",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:28",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:29",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:29",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:30",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:30",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:31",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:31",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:32",
+    "log_level": "DATA",
+    "Finished Processing File": 29
+  },
+  {
+    "timestamp": "2023-11-01T19:47:32",
+    "log_level": "DATA",
+    "Processing File": 30
+  },
+  {
+    "timestamp": "2023-11-01T19:47:32",
+    "log_level": "DATA",
+    "User Request Time": 1698848173.848211,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:32",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:32",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:34",
+    "log_level": "DATA",
+    "input_rate": 2,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:34",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:35",
+    "log_level": "DATA",
+    "input_rate": 9,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:35",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:35",
+    "log_level": "DATA",
+    "Finished Processing File": 30
+  },
+  {
+    "timestamp": "2023-11-01T19:47:35",
+    "log_level": "DATA",
+    "Processing File": 31
+  },
+  {
+    "timestamp": "2023-11-01T19:47:35",
+    "log_level": "DATA",
+    "User Request Time": 1698848174.1122293,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:36",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:36",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:36",
+    "log_level": "DATA",
+    "Finished Processing File": 31
+  },
+  {
+    "timestamp": "2023-11-01T19:47:36",
+    "log_level": "DATA",
+    "Processing File": 32
+  },
+  {
+    "timestamp": "2023-11-01T19:47:36",
+    "log_level": "DATA",
+    "User Request Time": 1698848174.3924453,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:37",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:37",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:38",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:38",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:39",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:39",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:40",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:40",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:41",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:41",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:42",
+    "log_level": "DATA",
+    "Finished Processing File": 32
+  },
+  {
+    "timestamp": "2023-11-01T19:47:42",
+    "log_level": "DATA",
+    "Processing File": 33
+  },
+  {
+    "timestamp": "2023-11-01T19:47:42",
+    "log_level": "DATA",
+    "User Request Time": 1698848174.683976,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:42",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:42",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:43",
+    "log_level": "DATA",
+    "Finished Processing File": 33
+  },
+  {
+    "timestamp": "2023-11-01T19:47:43",
+    "log_level": "DATA",
+    "Processing File": 34
+  },
+  {
+    "timestamp": "2023-11-01T19:47:43",
+    "log_level": "DATA",
+    "User Request Time": 1698848174.9406939,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:43",
+    "log_level": "DATA",
+    "input_rate": 4,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:43",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:44",
+    "log_level": "DATA",
+    "Finished Processing File": 34
+  },
+  {
+    "timestamp": "2023-11-01T19:47:44",
+    "log_level": "DATA",
+    "Processing File": 35
+  },
+  {
+    "timestamp": "2023-11-01T19:47:44",
+    "log_level": "DATA",
+    "User Request Time": 1698848175.2105432,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:45",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:45",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:46",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:46",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:47",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:47",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:48",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:48",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:49",
+    "log_level": "DATA",
+    "input_rate": 3,
+    "model": "yolov5m"
+  },
+  {
+    "timestamp": "2023-11-01T19:47:49",
+    "log_level": "INFO",
+    "Component": "Analyzer",
+    "Action": "Performing the analysis"
+  }
+]

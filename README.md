@@ -41,7 +41,6 @@ Elasticsearch will be exposed on API `http://localhost:9200/`
 
 Kibana will be exposed on API `http://localhost:5601/`
 
-Now we will import Dashboard to Elasticsearch 
 
 ## Setting up Virtual Environment (optional)
 

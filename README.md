@@ -2,10 +2,14 @@
 
 Clone the GitHub repository:
 
-```git clone https://github.com/sa4s-serc/observability.git```
+```
+git clone https://github.com/sa4s-serc/observability.git
+```
 
 Run command:
-`cd observability`
+```
+cd observability
+```
 
 This project mainly uses:
 > Elasticsearch and Kibana
@@ -24,7 +28,9 @@ Start an Elasticsearch and Kibana container using a Docker-compose file:
 
 Run command:
 
-`docker-compose up`
+```
+docker-compose up
+```
 
 > This will take time to install, you can check if it is ready by going to URL `http://localhost:9200/`.
 > If a JSON object is displayed, with "cluster_name": "docker-cluster", you are ready to go.
@@ -39,7 +45,9 @@ Now we will import Dashboard to Elasticsearch
 
 Run command in a new terminal:
 
-`curl -X POST "http://localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@export.ndjson`
+```
+curl -X POST "http://localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@export.ndjson
+```
 
 ## Setting up Frontend
 
@@ -47,33 +55,43 @@ To install node module's:
 
 Run command:
 
-`npm install`
+```
+npm install
+```
 
 ## Setting up Virtual Environment (optional)
 
 Using virtualenv allows you to avoid installing Python packages globally
 
-` python3 -m venv ./venv`
+```
+python3 -m venv ./venv
 
- `source venv/bin/activate`
+source venv/bin/activate
+```
  
 ## Settign up Backend: Model loader, MAPE-K, Locust a load tester.
 
-`cd NAVIE`
+```
+cd NAVIE
 
-`python3 process_model.py`
+python3 process_model.py
 
-`pip install -r requirements.txt`
+pip install -r requirements.txt
+```
 
 ## How to start the application
 
 Run the backend for the application from the directory `observability/NAVIE`:
 
-`python3 Node.py`
+```
+python3 Node.py
+```
 
 Run the React-Application from the directory `observability` :
 
-`npm run start`
+```
+npm run start
+```
 
 
 ## How to use the application

@@ -26,6 +26,9 @@ Run command:
 
 `docker-compose up`
 
+> This will take time to install, you can check if it is ready by going to URL `http://localhost:9200/`.
+> If a JSON object is displayed, with "cluster_name": "docker-cluster", you are ready to go.
+
 Once ready:
 
 Elasticsearch will be exposed on API `http://localhost:9200/`
@@ -62,13 +65,14 @@ Using virtualenv allows you to avoid installing Python packages globally
 
 ## How to start the application
 
+Run the backend for the application from the directory `observability/NAVIE`:
+
+`python3 Node.py`
+
 Run the React-Application from the directory `observability` :
 
 `npm run start`
 
-Run the backend for the application from the directory `observability/NAVIE`:
-
-`python3 Node.py`
 
 ## How to use the application
 

@@ -2,7 +2,7 @@
 
 Clone the GitHub repository:
 
-`git clone https://github.com/sa4s-serc/observability.git`
+```git clone https://github.com/sa4s-serc/observability.git```
 
 Run command:
 `cd observability`

@@ -33,7 +33,10 @@ docker-compose up
 ```
 
 > This will take time to install, you can check if it is ready by going to URL `http://localhost:9200/`.
+
 > If a JSON object is displayed, with "cluster_name": "docker-cluster", you are ready to go.
+
+> Use a different terminal for the rest of the steps.
 
 Once ready:
 

@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# Function to run a command in a new terminal
-run_in_new_terminal() {
-  gnome-terminal -- bash -c "$1; exec bash"
-}
-
 # Run the curl command in a new terminal
-run_in_new_terminal "curl -X POST 'http://localhost:5601/api/saved_objects/_import' -H 'kbn-xsrf: true' --form file=@export.ndjson"
+curl -X POST 'http://localhost:5601/api/saved_objects/_import' -H 'kbn-xsrf: true' --form file=@export.ndjson
 
 # Setting up Frontend
 echo "Setting up Frontend"

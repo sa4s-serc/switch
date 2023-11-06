@@ -76,7 +76,6 @@ npm install
 ```
 cd NAVIE
 
-
 pip install -r requirements.txt'
 
 python3 process_model.py

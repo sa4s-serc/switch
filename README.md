@@ -43,12 +43,6 @@ Kibana will be exposed on API `http://localhost:5601/`
 
 Now we will import Dashboard to Elasticsearch 
 
-Run command in a new terminal:
-
-```
-curl -X POST "http://localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@export.ndjson
-```
-
 ## Setting up Virtual Environment (optional)
 
 Using virtualenv allows you to avoid installing Python packages globally
@@ -58,7 +52,25 @@ python3 -m venv ./venv
 
 source venv/bin/activate
 ```
+## Installation 
 
+<details>
+<summary>Installation using setup.sh</summary>
+
+ ```
+chmod +x setup.sh
+./setup.sh
+```
+</details>
+
+<details>
+<summary>Manual Installation</summary>
+ 
+## Importing Dashboard
+
+```
+curl -X POST "http://localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@export.ndjson
+```
  
 ## Setting up Frontend
 
@@ -81,6 +93,7 @@ pip install -r requirements.txt'
 python3 process_model.py
 
 ```
+</details>
 
 ## How to start the application
 

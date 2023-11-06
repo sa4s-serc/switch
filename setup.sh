@@ -1,6 +1,6 @@
 #!/bin/bash
-#Installing without virtual environment
-# Run the curl command in a new terminal
+
+echo "Importing Dashboard"
 curl -X POST 'http://localhost:5601/api/saved_objects/_import' -H 'kbn-xsrf: true' --form file=@export.ndjson
 
 # Setting up Frontend
@@ -13,18 +13,9 @@ echo "Setting up Backend"
 echo "Changing directory to NAVIE..."
 cd NAVIE
 
-echo "Loading Model's"
-python3 process_model.py
 
 echo "Installing Python requirements..."
 pip install -r requirements.txt
 
-# # How to start the application
-# echo "Starting the application"
-# echo "Running the React-Application from the directory observability..."
-# cd ../observability
-# npm run start
-
-# echo "Running the backend for the application from the directory observability/NAVIE..."
-# cd NAVIE
-# python3 Node.py
+echo "Loading Model's"
+python3 process_model.py

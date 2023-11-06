@@ -38,6 +38,11 @@ Run command in a new terminal:
 
 `curl -X POST "http://localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@export.ndjson`
 
+## Setting up Virtual Environment (optional)
+` python3 -m venv ./venv`
+
+ `source venv/bin/activate`
+
 ## Setting up Frontend
 
 To install node module's:

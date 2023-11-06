@@ -61,7 +61,9 @@ Using virtualenv allows you to avoid installing Python packages globally
 
 `cd NAVIE`
 
-` pip install -r requirements.txt`
+`python3 process_model.py`
+
+`pip install -r requirements.txt`
 
 ## How to start the application
 

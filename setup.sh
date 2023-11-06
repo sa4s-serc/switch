@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Installing without virtual environment
 # Run the curl command in a new terminal
 curl -X POST 'http://localhost:5601/api/saved_objects/_import' -H 'kbn-xsrf: true' --form file=@export.ndjson
 

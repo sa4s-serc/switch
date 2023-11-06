@@ -13,6 +13,9 @@ echo "Setting up Backend"
 echo "Changing directory to NAVIE..."
 cd NAVIE
 
+echo "Loading Model's"
+python3 process_model.py
+
 echo "Installing Python requirements..."
 pip install -r requirements.txt
 

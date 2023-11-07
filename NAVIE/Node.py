@@ -118,12 +118,13 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         #Locust to send Request
         run_in_new_terminal(f'export CSV_FILE="{CSV_FILE}" && export IMAGES_FOLDER="{IMAGES_FOLDER}" && locust -f Request_send.py --headless  --host=http://localhost:5000/v1 --users 1 --spawn-rate 1')
         #to start monitoring
-        if(approch == "NAIVE"):
+        if(approch == "AdaMLs"):   
+            print("RUunning monitor_ada.py---------------------")
+            run_in_new_terminal('python3 AdaMls/monitor_ada.py')
+        elif(approch == "NAIVE" or approch == "Try Your Own"):
             print("RUunning monitor.py---------------------")
             run_in_terminal('python3 monitor.py')
-        elif(approch == "AdaMLs"):   
-            print("RUunning monitor_ada.py---------------------")
-            run_in_new_terminal('python3 monitor_ada.py')
+        
         #upload data to ES
         run_in_terminal('python3 logs_to_es.py')
         run_in_terminal('python3 metrics_to_es.py')

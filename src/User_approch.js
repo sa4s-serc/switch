@@ -40,7 +40,7 @@ function User_approch() {
       <div className="row">
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5xLower">
-            Lower bound for yolov5x model.
+            Lower bound of response time for Xlarge model.
           </label>
           <input
             className="form-control"
@@ -53,7 +53,7 @@ function User_approch() {
         </div>
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5xUpper">
-            Upper bound for yolov5x model.
+          Upper bound of response time for Xlarge model
           </label>
           <input
             className="form-control"
@@ -69,7 +69,7 @@ function User_approch() {
       <div className="row mt-3">
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5lLower">
-            Lower bound for yolov5l model.
+          Lower bound of response time for Large model
           </label>
           <input
             className="form-control"
@@ -82,7 +82,7 @@ function User_approch() {
         </div>
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5lUpper">
-            Upper bound for yolov5l model.
+          Upper bound of response time for Large model
           </label>
           <input
             className="form-control"
@@ -99,7 +99,7 @@ function User_approch() {
       <div className="row mt-3">
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5mLower">
-            Lower bound for yolov5m model.
+          Lower bound of response time for Medium model
           </label>
           <input
             className="form-control"
@@ -112,7 +112,7 @@ function User_approch() {
         </div>
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5mUpper">
-            Upper bound for yolov5m model.
+          Upper bound of response time for Medium model
           </label>
           <input
             className="form-control"
@@ -128,7 +128,7 @@ function User_approch() {
       <div className="row mt-3">
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5sLower">
-            Lower bound for yolov5s model.
+          Lower bound of response time for Small model
           </label>
           <input
             className="form-control"
@@ -141,7 +141,7 @@ function User_approch() {
         </div>
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5sUpper">
-            Upper bound for yolov5s model.
+          Upper bound of response time for Small model
           </label>
           <input
             className="form-control"
@@ -156,7 +156,7 @@ function User_approch() {
         <div className="row mt-3">
             <div className="col-md-6">
             <label className="small" htmlFor="inputYolov5nLower">
-                Lower bound for yolov5n model.
+            Lower bound of response time for Nano model
             </label>
             <input
                 className="form-control"
@@ -169,7 +169,7 @@ function User_approch() {
             </div>
             <div className="col-md-6">
             <label className="small" htmlFor="inputYolov5nUpper">
-                Upper bound for yolov5n model.
+            Upper bound of response time for Nano model
             </label>
             <input
                 className="form-control"

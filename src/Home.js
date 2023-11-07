@@ -170,10 +170,15 @@ const Home = () => {
       
         <div className="mb-3">
           <select className="selectpicker" value={selectedOption} onChange={handleSelectChange}>
-            <option value="">Select an option</option>
+            {/* <option value="">Select an option</option> */}
             <option value="NAIVE">NAIVE</option>
             <option value="AdaMLs">AdaMLS</option>
             <option value="Try Your Own">Try Your Own</option>
+            <option value="yolov5n">Nano Model</option>
+            <option value="yolov5s">Small Model</option>
+            <option value="yolov5m">Medium Model</option>
+            <option value="yolov5l">Large Model</option>
+            <option value="yolov5x">Xlarge Model</option>
           </select>
         </div>
         

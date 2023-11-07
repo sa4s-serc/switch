@@ -124,7 +124,10 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         elif(approch == "NAIVE" or approch == "Try Your Own"):
             print("RUunning monitor.py---------------------")
             run_in_terminal('python3 monitor.py')
-        
+        else:
+            with open('model.csv', 'w') as file:
+                writer = csv.writer(file)
+                writer.writerow([approch])
         #upload data to ES
         run_in_terminal('python3 logs_to_es.py')
         run_in_terminal('python3 metrics_to_es.py')

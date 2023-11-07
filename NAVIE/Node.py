@@ -8,6 +8,8 @@ import time
 from elasticsearch import Elasticsearch
 from typing import Dict
 import csv
+from get_data import write_csv, write_json
+
 es = Elasticsearch(['localhost'])
 app = FastAPI()
 sys_approch = "NAIVE"
@@ -172,15 +174,21 @@ async def restartProcess():
         raise HTTPException(status_code=500, detail="An error occurred while stoping")
 
 
-@app.post("/api/downloadData")
-async def startDownload():
-    try:
-        run_as_background('python3 get_data.py')
-        return {"message" : "Downloaded succesful"}
-    except Exception as e:
-        print("Error stoping:", str(e))
-        raise HTTPException(status_code=500, detail="An error occurred while stoping")
 
+@app.post("/api/downloadData")
+async def startDownload(data: dict):
+    try:
+        data_str = data.get("data")
+        print(data_str)
+        # You can use data_str in your script as needed
+        # run_as_background('python3 get_data.py')
+        write_csv('final_metrics_data' , f'Exported_metrics/exported-data-metrics_{data_str}.csv')
+        #saves logs data to json file
+        write_json('new_logs' , f'Exported_logs/exported-data-logs_{data_str}.json')
+        return {"message": "Downloaded successfully"}
+    except Exception as e:
+        print("Error stopping:", str(e))
+        raise HTTPException(status_code=500, detail="An error occurred while stopping")
     
 
 @app.post("/api/latest_metrics_data")

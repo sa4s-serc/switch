@@ -9,7 +9,7 @@ const Home = () => {
   const [showDashBoard ,  setShowDashBoard] = useState(false);
   const [stopProcessing , setstopProcessing] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
-
+  const [ID, setID] = useState('')
 
   const handleZipFileChange = (event) => {
     const file = event.target.files[0];
@@ -19,6 +19,13 @@ const Home = () => {
   const handleCSVFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedCSVFile(file);
+  };
+
+  
+  const handleIdChange = (event) => {
+    // Update the ID state with the new value from the input field
+    setID(event.target.value);
+    console.log(ID)
   };
 
   const handleUpload = async () => {
@@ -105,7 +112,12 @@ const Home = () => {
   const downloadData= async ()=>{
     try{
       const response = await fetch('http://localhost:3001/api/downloadData', {
-          method: 'POST'
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ data: ID }),
+       
         });
       if(response.ok){
         console.log("Downloaded succesfully");
@@ -167,8 +179,29 @@ const Home = () => {
           />
         </div>
         <div>
-      
-        <div className="mb-3">
+        
+        <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Name your Experiment</h5>
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="IdInput"
+                  className="form-control"
+                  onChange={handleIdChange}
+                  value={ID}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div className="mb-3 mt-3">
           <select className="selectpicker" value={selectedOption} onChange={handleSelectChange}>
             {/* <option value="">Select an option</option> */}
             <option value="NAIVE">NAIVE</option>

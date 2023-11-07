@@ -11,7 +11,7 @@ function User_approch() {
   const [yolov5sUpper, setYolov5sUpper] = useState("");
   const [yolov5nLower, setYolov5nLower] = useState("");
   const [yolov5nUpper, setYolov5nUpper] = useState("");
-
+  const [finalized, setfinalized] = useState(false)
   const changeKnowledge= async () =>{
     try{
     const response = await axios.post('http://localhost:3001/apichangeKnowledge', {
@@ -26,13 +26,17 @@ function User_approch() {
         yolov5nLower,
         yolov5nUpper
       });
+      alert("'Knowledge finalized")
+      setfinalized(true)
       console.log(response.data); // Handle the response as needed
+
     } catch (error) {
       console.error(error);
     }
   };
   return (
     <div>
+      {!finalized && <div>
       <div className="row">
         <div className="col-md-6">
           <label className="small" htmlFor="inputYolov5xLower">
@@ -183,7 +187,7 @@ function User_approch() {
       <button className="btn mt-3 small btn-danger" onClick={changeKnowledge}>
           Final Knowledge
         </button>
-
+        </div>}
     </div>
   );
 }

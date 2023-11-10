@@ -1,7 +1,7 @@
 from elasticsearch import Elasticsearch
 import csv
 import json
-import Custom_Logger as logger
+from Custom_Logger import logger
 # Connect to Elasticsearch
 es = Elasticsearch(['http://localhost:9200'])
 

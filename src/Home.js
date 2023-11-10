@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import JSZip from 'jszip';
 import Dashboard from './Dashboard';
 import User_approch from './User_approch'
-
+import User_approch_MAPE_K from './User_Approch_MAPE_K'
 const Home = () => {
   const [selectedZipFile, setSelectedZipFile] = useState(null);
   const [selectedCSVFile, setSelectedCSVFile] = useState(null);
@@ -201,12 +201,13 @@ const Home = () => {
       </div>
     </div>
 
-        <div className="mb-3 mt-3">
+        <div className="mb-3 mt-3 h5">
           <select className="selectpicker" value={selectedOption} onChange={handleSelectChange}>
             {/* <option value="">Select an option</option> */}
             <option value="NAIVE">NAIVE</option>
             <option value="AdaMLs">AdaMLS</option>
             <option value="Try Your Own">Try Your Own</option>
+            <option value="Write Your Own MAPE-K">Write Your Own MAPE-K</option>
             <option value="yolov5n">Nano Model</option>
             <option value="yolov5s">Small Model</option>
             <option value="yolov5m">Medium Model</option>
@@ -222,9 +223,17 @@ const Home = () => {
         </div>
         }
 
+        {selectedOption === "Write Your Own MAPE-K" &&
+
+        <div className="mb-3">
+            <User_approch_MAPE_K
+            id = {ID}/>
         </div>
-        <button className="btn btn-primary" onClick={handleUpload}>
-          Upload Files
+        }
+
+        </div>
+        <button className="btn btn-primary " onClick={handleUpload}>
+          Upload Files 
         </button>
       </div>}
       <div>

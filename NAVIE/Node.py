@@ -23,6 +23,7 @@ app.add_middleware(
 
 process_running = False
 running_processes = []
+monitor_directory = ''
 
 def run_in_terminal(command):
     global running_processes
@@ -126,6 +127,9 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         elif(approch == "NAIVE" or approch == "Try Your Own"):
             print("RUunning monitor.py---------------------")
             run_in_terminal('python3 monitor.py')
+        elif(approch == "Write Your Own MAPE-K"):
+            print("Montior from director: ",monitor_directory)
+            run_in_terminal(f'python3 {monitor_directory}/monitor.py')
         else:
             with open('model.csv', 'w') as file:
                 writer = csv.writer(file)
@@ -304,6 +308,47 @@ async def useNaive_knowledge():
         print("Error stoping:", str(e))
         raise HTTPException(status_code=500, detail="An error occurred updating knowledge file")
     
+
+def save_uploaded_file(file: UploadFile, directory: str):
+    with open(os.path.join(directory, file.filename), 'wb') as f:
+        f.write(file.file.read())
+
+# Define a function to unzip and save the knowledge zip file
+def unzip_and_save_knowledge(zip_file: UploadFile, directory: str):
+    with open(os.path.join(directory, zip_file.filename), 'wb') as f:
+        f.write(zip_file.file.read())
+    
+    # Unzip the knowledge zip file and save its contents in the same directory
+    with zipfile.ZipFile(os.path.join(directory, zip_file.filename), 'r') as zip_ref:
+        zip_ref.extractall(directory)
+
+@app.post('/your_mape_k')
+async def upload_files(
+    monitor: UploadFile,
+    analyzer: UploadFile,
+    planner: UploadFile,
+    execute: UploadFile,
+    knowledge: UploadFile,
+    id: str = Form(...), 
+):
+    global monitor_directory
+    monitor_directory = f"external_MAPE_K_{id}"
+    # Create the "external_MAPE_K_{id}" directory if it doesn't exist
+    os.makedirs(f"external_MAPE_K_{id}", exist_ok=True)
+    print("Received ID: ", id)
+    # Save the uploaded files to the "external_MAPE_K_{id}" directory
+    save_uploaded_file(monitor, f"external_MAPE_K_{id}")
+    save_uploaded_file(analyzer, f"external_MAPE_K_{id}")
+    save_uploaded_file(planner, f"external_MAPE_K_{id}")
+    save_uploaded_file(execute, f"external_MAPE_K_{id}")
+
+    # Unzip and save the knowledge zip file
+    unzip_and_save_knowledge(knowledge, f"external_MAPE_K_{id}")
+
+    return {"message": "Files uploaded and knowledge unzipped successfully"}
+
+
+
 
 if __name__ == "__main__":
     import uvicorn

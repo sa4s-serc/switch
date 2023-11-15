@@ -23,7 +23,7 @@ class MyUser(HttpUser):
             reader = csv.reader(f)
             self.wait_times = [float(row[0]) for row in reader]
 
-        self.n = 0
+        # self.n = 0
 
         # Read image files from the specified folder
         for filename in os.listdir(IMAGES_FOLDER):
@@ -33,6 +33,11 @@ class MyUser(HttpUser):
 
     @task
     def my_task(self):
+        if self.n >= len(self.wait_times):
+            # All rows completed, raise an exception to stop the execution
+            self.environment.runner.quit()
+            return
+
         image_file = open(self.image_data[self.n], "rb")
         files = {'image': image_file}
 

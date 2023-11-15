@@ -28,9 +28,9 @@ def write_csv(index_name , csv_file):
 
         print('Data exported to CSV:', csv_file)
     except Exception as e:
-        str = f"Error While downloading metrics data from ES {str(e)}"
-        logger.error(str)
-        print(str) 
+        strr = f"Error While downloading metrics data from ES {str(e)}"
+        logger.error(strr)
+        print(strr) 
         return 
 
 def write_json(index_name , json_file):
@@ -50,9 +50,9 @@ def write_json(index_name , json_file):
 
         print('Data exported to JSON:', json_file)
     except Exception as e:
-        str = f"Error While downloading logs data from ES {str(e)}"
-        logger.error(str)
-        print(str) 
+        strr = f"Error While downloading logs data from ES {str(e)}"
+        logger.error(strr)
+        print(strr) 
         return 
 
 #saves metrics data to csv

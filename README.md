@@ -54,7 +54,7 @@ python3 -m venv ./venv
 
 source venv/bin/activate
 ```
-## Installation 
+## Installation (only any one is requied)
 
 <details>
 <summary>Installation using setup.sh</summary>

@@ -61,6 +61,7 @@ cd observability
 
 
 ## Setting up Elastic Search and Kibana 
+Start the docker engine on your system.
 
 Start Elasticsearch and Kibana containers using Docker Compose with image version 7.9.1:
 
@@ -69,7 +70,8 @@ Start Elasticsearch and Kibana containers using Docker Compose with image versio
 docker-compose up
 ```
 
-> This will take time to install, once ready, Elasticsearch is accessible at http://localhost:9200/, and Kibana at http://localhost:5601/.
+> Wait until ready, this may take time to install depending on the internet connection.
+> You can check if it's ready by accessing Elasticsearch at http://localhost:9200/, and Kibana at http://localhost:5601/.
 
 > Use a different terminal for the rest of the steps.
 

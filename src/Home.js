@@ -153,12 +153,12 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-3 ">
       {!showDashBoard && <div>
-        <h1>File Upload</h1>
+        <h1 className="mb-3">Switch: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems</h1>
         <div className="mb-3">
           <label htmlFor="zipFileInput" className="form-label">
-            Select a zip file:
+            Upload a .zip file, for folder contaning images, the .zip file must have same name as the Image folder.
           </label>
           <input
             type="file"
@@ -169,7 +169,7 @@ const Home = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="csvFileInput" className="form-label">
-            Select a CSV file:
+            Upload a csv file contaning inter arrival rate data.
           </label>
           <input
             type="file"
@@ -185,7 +185,7 @@ const Home = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Name your Experiment</h5>
+              <h5 className="card-title">ID your Experiment</h5>
               <div className="form-group">
                 <input
                   type="text"
@@ -203,11 +203,11 @@ const Home = () => {
 
         <div className="mb-3 mt-3 h5">
           <select className="selectpicker" value={selectedOption} onChange={handleSelectChange}>
-            {/* <option value="">Select an option</option> */}
+            <option value="">Select an option</option>
             <option value="NAIVE">NAIVE</option>
             <option value="AdaMLs">AdaMLS</option>
-            <option value="Try Your Own">Try Your Own</option>
-            <option value="Write Your Own MAPE-K">Write Your Own MAPE-K</option>
+            <option value="Try Your Own">Modify NAIVE</option>
+            <option value="Write Your Own MAPE-K">Upload MAPE-K files</option>
             <option value="yolov5n">Nano Model</option>
             <option value="yolov5s">Small Model</option>
             <option value="yolov5m">Medium Model</option>

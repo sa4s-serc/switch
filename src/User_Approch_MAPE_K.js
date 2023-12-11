@@ -45,7 +45,7 @@ function FileUpload({id}) {
   return (
     <div>
     {!finalized && <div>
-      <h2>Upload Files for you MAPE-K</h2>
+      <h2>Upload files for MAPE-K</h2>
       <table className="table">
         <tbody>
           <tr>
@@ -106,7 +106,7 @@ function FileUpload({id}) {
         />
       </div>
 
-      <button onClick={handleUpload} className="btn btn-primary">Upload Files for you MAPE-K</button>
+      <button onClick={handleUpload} className="btn btn-danger">Upload files for MAPE-K</button>
     </div>}
     </div>
   );

@@ -1,13 +1,13 @@
 from Execute import Executor
 import pandas as pd
-from Custom_Logger import logger
+# from Custom_Logger import logger
 
 class Planner():
     def __init__(self,  input_rate , model, cluster ):
         self.input_rate = input_rate
         self.model = model
         self.cluster = cluster
-        logger.info(    {'Component': "Planner" , "Action": "Planner Object created" }  ) 
+        # logger.info(    {'Component': "Planner" , "Action": "Planner Object created" }  ) 
 
     def generate_adaptation_plan(self , count):
         
@@ -32,13 +32,13 @@ class Planner():
                 possible.append(df.columns[i])
         
         if(len(possible) == 0):
-            logger.error(    {'Component': "Planner" , "Action": "No adaptation plan generated" }  ) 
+            # logger.error(    {'Component': "Planner" , "Action": "No adaptation plan generated" }  ) 
             action = 1
             exe_obj = Executor()
             exe_obj.perform_action(action)
             return
 
-        logger.info(    {'Component': "Planner" , "Action": "Generating the adaptation plan" } )
+        # logger.info(    {'Component': "Planner" , "Action": "Generating the adaptation plan" } )
 
         models_possible =[]
 
@@ -91,7 +91,7 @@ class Planner():
         elif( model == 'xlarge' ):
             action = 5
         else:
-            logger.error(    {'Component': "Planner" , "Action": "No adaptation plan generated" }  )
+            # logger.error(    {'Component': "Planner" , "Action": "No adaptation plan generated" }  )
             action = 1
             
         #creates Executor object and call's to perform action.

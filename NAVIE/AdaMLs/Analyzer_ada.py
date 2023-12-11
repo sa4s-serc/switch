@@ -5,7 +5,7 @@ import pandas as pd
 import time
 import numpy as np
 import os
-from Custom_Logger import logger
+# from Custom_Logger import logger
 
 def euclidean_distance(point1, point2):
     return np.sqrt(np.sum((point1 - point2) ** 2))
@@ -95,7 +95,7 @@ class Analyzer():
 
 
     def perform_analysis(self,monitor_dict):
-        logger.info(    {'Component': "Analyzer" , "Action": "Performing the analysis" }  ) 
+        # logger.info(    {'Component': "Analyzer" , "Action": "Performing the analysis" }  ) 
         
         model = monitor_dict["model"]
 
@@ -118,7 +118,7 @@ class Analyzer():
             elif current_time - self.time > 0.25:
                 # initialize plan_obj....
                 self.count += 1
-                logger.info(    {'Component': "Analyzer" , "Action": "Creating Planner object" }  ) 
+                # logger.info(    {'Component': "Analyzer" , "Action": "Creating Planner object" }  ) 
                 plan_obj = Planner(adjusted_input_rate, model, closest_cluster)
                 plan_obj.generate_adaptation_plan(self.count)
         else:

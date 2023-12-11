@@ -1,9 +1,9 @@
-# naive
+
 from Analyzer_ada import Analyzer
 import time
 import pandas as pd
 from elasticsearch import Elasticsearch
-from Custom_Logger import logger
+import sys
 
 analyzer_obj = Analyzer()
 es = Elasticsearch(['http://localhost:9200'])
@@ -68,7 +68,7 @@ class Monitor():
 
     def continous_monitoring(self):
         monitor_dict = {}
-        logger.info(    {'Component': "Monitor" , "Action": "Started the adaptation effector module" }  ) 
+        # logger.info(    {'Component': "Monitor" , "Action": "Started the adaptation effector module" }  ) 
         st = time.time()
         while (1):
 
@@ -94,18 +94,20 @@ class Monitor():
 
                     monitor_dict["last_50"] = last_50
                     monitor_dict["pending_images"] = get_pending_images_count()
-
+                    print(monitor_dict)
+                 
                     if (model_name != 'yolov5n' and model_name != 'yolov5s' and model_name != 'yolov5l' and model_name != 'yolov5m' and model_name != 'yolov5x'):
                         continue
 
-                    logger.data(monitor_dict)
+                    # logger.data(monitor_dict)
 
                     # sends data to analyzer to perform data analysis.
                     analyzer_obj.perform_analysis(monitor_dict)
                     st = time.time()
                     
                 except Exception as e:
-                    logger.error(e)
+                    print(e)
+                    # logger.error(e)
 
 
 if __name__ == '__main__':

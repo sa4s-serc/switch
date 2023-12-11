@@ -25,12 +25,12 @@ process_running = False
 running_processes = []
 monitor_directory = ''
 
-def run_in_terminal(command):
+def run_in_terminal(command, working_directory=None):
     global running_processes
 
     try:
         command_list = command.split()
-        running_processes.append(subprocess.Popen(command_list))
+        running_processes.append(subprocess.Popen(command_list, cwd=working_directory))
     except Exception as e:
         print("Couldn't run processes in terminal: ", str(e))
 
@@ -123,13 +123,14 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         #to start monitoring
         if(approch == "AdaMLs"):   
             print("RUunning monitor_ada.py---------------------")
-            run_in_new_terminal('python3 AdaMls/monitor_ada.py')
+            run_in_terminal('python3 monitor_ada.py', working_directory='AdaMLs')
         elif(approch == "NAIVE" or approch == "Try Your Own"):
             print("RUunning monitor.py---------------------")
             run_in_terminal('python3 monitor.py')
         elif(approch == "Write Your Own MAPE-K"):
             print("Montior from director: ",monitor_directory)
-            run_in_terminal(f'python3 {monitor_directory}/monitor.py')
+            run_in_terminal('python3 monitor.py', working_directory=f'{monitor_directory}')
+          
         else:
             with open('model.csv', 'w') as file:
                 writer = csv.writer(file)
@@ -262,7 +263,7 @@ async def latest_log_data():
         raise HTTPException(status_code=500, detail="An error occurred while stoping")
 
 
-@app.post("/apichangeKnowledge")
+@app.post("/api/changeKnowledge")
 async def change_knowledge(data: Dict[str, str]):
 
     try:

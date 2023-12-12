@@ -1,8 +1,6 @@
-# An Exampler for observing to analyze and observe the self-adaptive model switch in run-time.
+# Switch: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
 
-Description from paper:
-
-This documentation provides a comprehensive guide to set up and observe the self-adaptive model switching in runtime using the Observability Framework.
+"Switch", an exemplar developed to enhance self-adaptive capabilities in Machine Learning-Enabled Systems, through dynamic model switching in runtime.  "Switch" is designed as a comprehensive web service, catering to a broad range of ML scenarios, with its implementation demonstrated through an object detection use case.
 
 ## Getting started
 
@@ -137,7 +135,15 @@ If not running, run following coomand from directory `observability`
 docker-compose up
 ```
 
-Run the backend for the application from the directory `observability/NAVIE`:
+If using virtual enviorment:
+
+Ensure that you are in the virtual enviorment you had created, you can activate virtual enviorment using command:
+```
+source venv/bin/activate
+```
+
+
+Run the backend first for the application from the directory `observability/NAVIE`:
 
 ```
 python3 Node.py
@@ -152,24 +158,23 @@ npm run start
 
 ## Using the Application
 
-1. Create a folder named `Images` containing all input images.
-2. Zip the `Images` folder and upload it.
-3. Create a `.csv` file with inter-arrival rates for images and upload it.
-4. Assign an `ID` to your experiment.
-5. Choose an approach for running the experiment:
+1. Create a .zip file for the folder contaning all the image's, zip file name must match the folder contning image's.
+2. Create a `.csv` file with inter-arrival rates for images and upload it.
+3. Assign an `ID` to your experiment.
+4. Choose an approach for running the experiment:
     - 4 self-adaptive approaches.
       - `NAIVE` and `AdaMLs` are different types of provided adaptation techniques.
-      - `Write your own` modifies the NAIVE algorithm according to user input values.
-      - `Write Your Own MAPE-K` is described below.
+      - `Modify NAIVE` modifies the NAIVE algorithm according to user input values.
+      - `Upload MAPE-K file's` is described below.
     - 5 single model approaches.
 
-6. Click `Upload`.
-7. Stop the process or when all images are processed, click `Stop Process`.
-8. Download data for the experiment.
-9. You can stat new experiment by clicking `New Process`
+5. Click `Upload`.
+6. Stop the process or when all images are processed, click `Stop Process`.
+7. Download data for the experiment.
+8. You can stat new experiment by clicking `New Process`
   
 <details>
-<summary><b>Write your own MAPE-K Guidelines</b></summary>
+<summary><b>Upload MAPE-K file's Guidelines</b></summary>
 
 
 ---
@@ -178,26 +183,126 @@ To effectively implement and utilize the MAPE-K framework, follow these steps:
 
 **Upload the Following Files:**
 
-   - **`monitor.py`:**
-     - Description: This file monitors the relevant metrics for adaptation.
-     - Guidelines: Refer to the `AdaMLs/monitor_ada.py` file for examples on extracting different metrics.
-     - Implementation: Define a planner object and pass the extracted metrics to it.
+- **`monitor.py`:**
+  - Description: This file monitors the relevant metrics for adaptation.
+  - Guidelines: Refer to code below to extract nessesary metrics from datastorage.
+  - Implementation: Define a planner object and pass the extracted metrics to it.
+  
 
-   - **`planner.py`:**
-     - Description: This code is responsible for determining the necessity of adaptation.
-     - Implementation: Develop logic within this file to plan and decide whether adaptation is required.
+  <details>
+  <summary><b>Code for Fetching past n metrics average from Elasticsearch</b></summary>
+    
+      def fetch_past_n_metrics_average():
+    
+        fields = ["model_processing_time", "detection_boxes", "confidence"]
 
-   - **`Analyzer.py`:**
-     - Description: This code determines the result of the adaptation process.
-     - Implementation: Include logic to determine the adaptation step.
+        # Get the total count of documents in the index
+        doc_count = es.count(index=index_name)["count"]
 
-   - **`Execute.py`:**
-     - Description: Executes the model switch.
-     - Guidelines: Refer to the `AdaMLs/Execute.py` file for insights on how to switch models.
-     - Implementation: Integrate the necessary logic to perform the model switch.
+        # Calculate the number of documents to fetch
+        num_docs_to_fetch = min(num_documents, doc_count)
 
-   - **`Knowledge.zip`:**
-     - Description: A zip file containing all the knowledge files required by the MAPE-K framework for the successful generation and execution of adaptations.
+        # Set the query to fetch the desired documents
+        query = {
+            "size": num_docs_to_fetch,
+            "sort": [
+                {"log_id": {"order": "desc"}}
+            ]
+        }
+
+        # Fetch the documents from Elasticsearch
+        response = es.search(index=index_name, body=query)
+
+        # Initialize dictionaries to store the values for each field
+        field_values = {field: [] for field in fields}
+
+        # Extract the field values from the fetched documents
+        for hit in response["hits"]["hits"]:
+            for field in fields:
+                field_value = hit["_source"][field]
+                try:
+                    field_value = float(field_value)
+                    field_values[field].append(field_value)
+                except ValueError:
+                    pass
+
+        # Calculate the mean for each field
+        mean_values = {field: sum(field_values[field]) / len(field_values[field]) if field_values[field] else 0
+                      for field in fields}
+
+        # Return the mean values
+        temp_dict = {}
+        for field, mean_value in mean_values.items():
+            temp_dict[field] = mean_value
+
+        return [temp_dict["confidence"], temp_dict["model_processing_time"], temp_dict["detection_boxes"]]
+  </details>
+
+  <details>
+  <summary><b>Code to Extract model in use and input rate:</b></summary>
+
+      def extract_metric(file_name):
+          df = pd.read_csv(file_name, header=None)
+          
+          array = df.to_numpy()
+          return array[0][0]
+
+      monitor_dict = {}  # Initialize the dictionary to store monitored values
+      monitor_dict["model"] = extract_metric("../model.csv")
+      monitor_dict["Input_rate"] = extract_metric("../monitor.csv")
+  </details>
+  
+
+
+ - **`planner.py`:**
+   - Description: This code is responsible for determining the necessity of adaptation.
+   - Implementation: Develop logic within this file to plan and decide whether adaptation is required.
+
+ - **`Analyzer.py`:**
+   - Description: This code determines the result of the adaptation process.
+   - Implementation: Include logic to determine the adaptation step.
+
+ - **`Execute.py`:**
+   - Description: Executes the model switch.
+   - Guidelines: Refer to the code below for model switching.
+   - Implementation: Integrate the necessary logic to perform the model switch.
+
+    <details>
+    <summary><b>Model Switching code</b></summary>
+
+        def switch_model(model_name):
+          f = open("../model.csv", "w")
+          f.write(model_name)
+          f.close()
+      
+        def perform_action(act):
+          # model switch takes place by changing the model name in the model.csv file .
+          if (act == 1):
+              # switch model to n
+              switch_model("yolov5n")
+
+          elif (act == 2):
+              # switch model to s
+              switch_model("yolov5s")
+
+          elif (act == 3):
+              # switch model to m
+              switch_model("yolov5m")
+
+          elif (act == 4):
+              # switch model to l
+              switch_model("yolov5l")
+
+          elif (act == 5):
+              # switch model to xl
+              switch_model("yolov5x")
+
+          print("Adaptation completed.")
+    </details>
+
+
+ - **`Knowledge.zip`:**
+   - Description: A zip file containing all the knowledge files required by the MAPE-K framework for the successful generation and execution of adaptations.
 
 **Folder Structure:**
 

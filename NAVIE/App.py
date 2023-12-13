@@ -3,8 +3,10 @@ import time
 import base64
 from fastapi import FastAPI, File, UploadFile, HTTPException
 import uvicorn
-from elasticsearch import Elasticsearch
+import csv
 from Custom_Logger import logger
+import os
+import shutil
 
 # Creating a FastAPI endpoint.
 app = FastAPI()
@@ -12,54 +14,40 @@ input_rate = 0
 start_time = 0
 total_in = 0
 
-es = Elasticsearch()
 
 
 DETECTION_URL = '/v1/object-detection'
 
-#index name for image_data
-idx = "image_data"
-
-# Function to check if the Elasticsearch index exists
-def index_exists(index):
-    return es.indices.exists(index=index)
-
 
 @app.post(DETECTION_URL)
-async def predict(image: UploadFile = File(...)):
+async def predict( image: UploadFile = File(...) ):
     global start_time
     global input_rate
     global total_in
-    try:
-        if time.time() - start_time > 1:
-            # Measure the input rate of images per second
-            f = open("monitor.csv", "w")
-            f.write(f"{input_rate}")
-            f.close()
-            start_time = time.time()
-            input_rate = 0
-
-        input_rate += 1
+    try: 
+        if(time.time() - start_time > 1 ):
+                f = open("monitor.csv", "w")
+                f.write(f'{input_rate}')
+                f.close()
+                start_time = time.time()
+                input_rate = 0
+             
+        input_rate+=1
         im_bytes = await image.read()
         x = time.time()
-        #here timestamp indicates the time of receiving the request.
-        #total_in is the id of the image.
-        data = {
-            "timestamp": x,
-            "image_bytes": base64.b64encode(im_bytes).decode('utf-8'),
-            "total_in": total_in
-        }
+        filename = f"images/queue{total_in}.csv"
 
-        es.index(index=idx,id = total_in,  body=data)
-
+        f = open(filename, "w")
+        writer = csv.writer(f)
+        writer.writerow([x])
+        writer.writerow(im_bytes)
+        f.close()
+        
         total_in += 1
-        return {"message" : "Uploaded image_data to ES"}
+        return 
     except Exception as e:
-        str =f"Error uploading image_data to ES: {str(e)}"
-        logger.error(str)
-        print(str)
-        raise HTTPException(status_code=500, detail="An error occurred while stoping")
-    
+        strr = str(e)
+        print(strr)
 
 
 if __name__ == '__main__':
@@ -68,12 +56,20 @@ if __name__ == '__main__':
     parser.add_argument('--port', default=port, type=int, help='port number')
     opt = parser.parse_args()
 
-    #checking and creating index for image_data in elasticsearch, to store image
-    #data. This will work as a queue.
-    if not index_exists(idx):
-        es.indices.create(index=idx)
+    folder_path = "images"
 
-    es.delete_by_query(index=idx, body={"query": {"match_all": {}}})
-    es.indices.refresh(index="image_data")
+    # Check if the folder exists
+    if os.path.exists(folder_path):
+        # If it exists, remove its contents (files and subdirectories)
+        for item in os.listdir(folder_path):
+            item_path = os.path.join(folder_path, item)
+            if os.path.isfile(item_path):
+                os.remove(item_path)
+            elif os.path.isdir(item_path):
+                shutil.rmtree(item_path)
+    else:
+        # If it doesn't exist, create the folder
+        os.mkdir(folder_path)
+
 
     uvicorn.run(app, host='0.0.0.0', port=opt.port)

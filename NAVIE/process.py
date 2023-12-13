@@ -7,10 +7,10 @@ import pandas as pd
 import imghdr
 import os
 from Custom_Logger import logger
-from elasticsearch import Elasticsearch
 import base64
 import datetime
 from ultralytics import YOLO
+import csv
 
 models = {}
 total_processed = 0
@@ -57,19 +57,6 @@ def get_current():
     # print(array[0][0])
     return array[0][0]
 
-def save_result(results, total_processed):
-    output_folder = os.path.abspath('Output')
-
-    # Create the output folder if it doesn't exist
-    # if not os.path.exists(output_folder):
-    #     os.makedirs(output_folder)
-
-    # Save the resultant image in the output folder
-    file_name = f'Image{total_processed}'
-    # output_image_path = os.path.join(output_folder, file_name)
-    results.save(file_name, f"Output/{file_name}")  # or "PNG" for PNG format
-
-
 
 def process_row(im_bytes, start_time):
 
@@ -100,15 +87,21 @@ def process_row(im_bytes, start_time):
 
             # detection = response.pandas().xyxy[0]
             confidences = results[0].boxes.conf.tolist()
-            current_conf = sum(confidences)
-            current_boxes = len(confidences)
+            class_list = results[0].boxes.cls.tolist()
+            len_conf = len(confidences)
+            total_conf = 0
+            current_boxes = 0
+            for i in range(0, len_conf):
+                if confidences[i] >= 0.35 :
+                # and class_list[i] == 0:
+                    total_conf += confidences[i]
+                    current_boxes += 1
 
-            if (current_boxes != 0):
-                avg_conf = current_conf/current_boxes
-
+            if current_boxes != 0:
+                avg_conf = total_conf / current_boxes
             else:
                 avg_conf = 0
-
+                
             t = time.time()
             current_time = t - current_time #model processsing time
             start_time = t - start_time # total time take by image to finally output
@@ -135,51 +128,58 @@ def process_row(im_bytes, start_time):
     else:
         return {'error': f'Model {current_model} not found'}
     
-es = Elasticsearch()
+
 
 def start_processing():
-
-    # checks for the current image csv file in images folder, and if it exists, it sends the image_data to process_row function
 
     global total_processed
     while True:
         r = 0
-        image_index = "image_data"
-        current_image = total_processed
-        next_image = total_processed+1
+        image_path = f"images/queue{total_processed}.csv"
+        image_path_next = f"images/queue{total_processed+1}.csv"
 
-        if not es.exists(index=image_index, id=current_image):
+        if os.path.exists(image_path) == False:
+            
             logger.error(f"File {total_processed}.csv does not exist")
- 
-            if not es.exists(index=image_index, id=next_image):
-                time.sleep(0.3)
+            if (os.path.exists(image_path_next) == False):
+                time.sleep(0.03)
                 continue
             else:
                 logger.error(f"Skiping a Image file, processing the next")
-    
                 total_processed += 1
-                current_image = next_image
+                image_path = image_path_next
 
         logger.data({"Processing File" : total_processed  })
+        with open(image_path, 'r') as f:
+            reader = csv.reader(f)
+            rows = list(reader)
 
-        response = es.get(index=image_index, id= current_image) 
-        image_data = response["_source"]
+        if len(rows) >= 2:
+            try:
+                first_row = rows[1]
+                start_time = float(rows[0][0])
+                print(start_time)
+                first_row = [int(x) for x in first_row]
+                first_row = bytes(first_row)
 
-        timestamp = image_data["timestamp"]
-        image_bytes_encoded = image_data["image_bytes"]
-        # total_in = image_data["total_in"]
+                # Process the first row
+                process_row(first_row, start_time)
+                # Delete the first row from the CSV file
+                os.remove(image_path)
+                # Do something with the processed row
+                logger.data({"Finished Processing File" : total_processed - 1 })
 
-        image_bytes = base64.b64decode(image_bytes_encoded)
+            except Exception as e:
+                logger.error(f"Skiping a Image file, processing the next")
+                total_processed += 1
 
-        try:
-            process_row(image_bytes , timestamp)
-            es.delete(index=image_index, id=current_image)
-            logger.data({"Finished Processing File" : total_processed - 1 })
-
-        except Exception as e:
-            logger.error(e)
-            logger.error(f"Skiping a Image file, processing the next")
+        elif len(rows) == 1:
+        
             total_processed += 1
+        else:
+            logger.error("File not exist")
+            time.sleep(0.5)
+            continue
 
 def create_or_clear_csv(file_path):
     if os.path.exists(file_path):

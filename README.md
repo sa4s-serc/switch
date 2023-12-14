@@ -335,7 +335,7 @@ Ensure that the code files adhere to the specified guidelines for seamless integ
 ## Using the final result's 
 If you have downloaded the data for an experiment, the metric's data is stored in a CSV file: `NAVIE/Exported_metrics/exported-data-metrics_{id}` and the logs for the experiment are stored in a JSON file: `NAVIE/Exported_logs/exported-data-logs_{id}`.
  
-## Filtering the classes you want to be detected
+## Filtering based on classes and confidence score:
 
 
 This code snippet, to be modified in the `process.py` file located in the `NAVIE` directory, demonstrates the process of filtering object detection results based on class IDs and confidence levels corresponding to the COCO dataset. Users can specify desired classes by adding class filters within the provided loop. Examples for detecting specific classes, such as 'crowd' (class ID 0) and 'dog' (class ID 16), are provided in the comments of the code.

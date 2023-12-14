@@ -190,7 +190,7 @@ const Home = () => {
 
         <div className="mb-3">
           <label htmlFor="text" className="form-label">
-            Upload folder base location if zip size greater than 700MB, .
+            Upload folder base location if zip size greater than 700MB .
           </label>
           <input
             type="text"

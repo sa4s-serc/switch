@@ -10,7 +10,7 @@ const Home = () => {
   const [stopProcessing , setstopProcessing] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const [ID, setID] = useState('')
-
+  const [loc, setLoc] = useState('')
   const handleZipFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedZipFile(file);
@@ -21,7 +21,10 @@ const Home = () => {
     setSelectedCSVFile(file);
   };
 
-  
+  const handleLocationChange=(event)=>{
+    setLoc(event.target.value);
+    console.log(loc)
+  }
   const handleIdChange = (event) => {
     // Update the ID state with the new value from the input field
     setID(event.target.value);
@@ -29,26 +32,37 @@ const Home = () => {
   };
 
   const handleUpload = async () => {
-    if (!selectedZipFile || !selectedCSVFile) {
+    if ((!selectedZipFile && loc=='') || !selectedCSVFile) {
       return;
     }
 
     try {
       setShowDashBoard(true);
-      const zip = new JSZip();
-      await zip.loadAsync(selectedZipFile);
+      
+      if(selectedZipFile){
+        const zip = new JSZip();
+        await zip.loadAsync(selectedZipFile);
 
-      const files = [];
-      zip.forEach(async (relativePath, file) => {
-        const content = await file.async('uint8array');
-        files.push({ path: relativePath, content });
-      });
+        const files = [];
+        zip.forEach(async (relativePath, file) => {
+          const content = await file.async('uint8array');
+          files.push({ path: relativePath, content });
+        });
+      }
+      
 
       const formData = new FormData();
-      formData.append('zipFile', selectedZipFile);
+      if (selectedZipFile) {
+        formData.append('zipFile', selectedZipFile);
+        console.log('Zip file added to foem data')
+      }
       formData.append('csvFile', selectedCSVFile);
       formData.append('approch', selectedOption);
-
+      if (loc) {
+        formData.append('folder_location', loc);
+      }
+  
+      console.log(selectedOption, loc)
       const response = await fetch('http://localhost:3001/api/upload', {
         method: 'POST',
         body: formData,
@@ -97,6 +111,12 @@ const Home = () => {
       if(response.ok){
         console.log("Restartes process");
         setstopProcessing(true);
+        setID('')
+        setSelectedCSVFile(null)
+        setSelectedOption('')
+        setLoc('')
+        setSelectedZipFile(null)
+
       }
       else{
         console.log("Failed to restart program")
@@ -167,6 +187,20 @@ const Home = () => {
             onChange={handleZipFileChange}
           />
         </div>
+
+        <div className="mb-3">
+          <label htmlFor="text" className="form-label">
+            Upload folder base location if zip size greater than 700MB, .
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="textInput"
+            onChange={handleLocationChange}
+          />
+        </div>
+
+
         <div className="mb-3">
           <label htmlFor="csvFileInput" className="form-label">
             Upload a csv file contaning inter arrival rate data.

@@ -84,7 +84,11 @@ async def upload_files(zipFile: UploadFile = File(None), csvFile: UploadFile = F
         shutil.rmtree(upload_dir, ignore_errors=True)
         os.makedirs(upload_dir, exist_ok=True)
 
-        # Save the uploaded files
+        unzip_dir = "unzipped"
+        shutil.rmtree(unzip_dir, ignore_errors=True)
+        os.makedirs(unzip_dir, exist_ok=True)
+
+        # Save the uploaded files   
         csv_path = os.path.join(upload_dir, csvFile.filename)
         with open(csv_path, "wb") as cf:
             shutil.copyfileobj(csvFile.file, cf)

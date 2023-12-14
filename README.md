@@ -57,11 +57,20 @@ git clone https://github.com/sa4s-serc/observability.git
 cd observability
 ```
 
+If using a zip file for installation:
+
+> Extract the observability-main folder.
+
+>From the extracted directory, use command:
+```bash
+cd observability-main
+```
+
 
 ## Setting up Elastic Search and Kibana 
-Start the docker engine on your system.
+Start the **docker engine** on your system.
 
-Start Elasticsearch and Kibana containers using Docker Compose with image version 7.9.1:
+Start Elasticsearch and Kibana containers using Docker Compose with image version 7.9.1, usign command:
 
 
 ```bash
@@ -71,7 +80,7 @@ docker-compose up
 > Wait until ready, this may take time to install depending on the internet connection.
 > You can check if it's ready by accessing Elasticsearch at http://localhost:9200/, and Kibana at http://localhost:5601/.
 
-> Use a different terminal for the rest of the steps.
+> Leave the docker-container running. Use a different terminal for the rest of the steps.
 
 ## Setting up Virtual Environment (optional)
 
@@ -82,6 +91,7 @@ python3 -m venv ./venv
 
 source venv/bin/activate
 ```
+
 ## Installation (only any one is requied)
 
 <details>
@@ -130,12 +140,12 @@ python3 process_model.py
 
 Ensure `docker-compose.yml` is running:
 
-If not running, run following coomand from directory `observability`
+If not running, run following command from directory `observability`
 ```bash
 docker-compose up
 ```
 
-If using virtual enviorment:
+**If using virtual enviorment**:
 
 Ensure that you are in the virtual enviorment you had created, you can activate virtual enviorment using command:
 ```
@@ -158,7 +168,14 @@ npm run start
 
 ## Using the Application
 
-1. Create a .zip file for the folder contaning all the image's, zip file name must match the folder contning image's.
+### If the Image folder size is < 500Mb
+1. Upload Image folder in .zip format. The .zip file must have same name as the Image folder.
+
+### If the Image folder size is > 500Mb
+1. Enter the full path of your image folder starting from the root directory in the provided text field.
+   
+### Next steps are same for both the way's of giving Image folder as Input.
+
 2. Create a `.csv` file with inter-arrival rates for images and upload it.
 3. Assign an `ID` to your experiment.
 4. Choose an approach for running the experiment:
@@ -306,7 +323,7 @@ To effectively implement and utilize the MAPE-K framework, follow these steps:
 
 **Folder Structure:**
 
-   - Your code filees are saved in a folder structure: `NAIVE/external_MAPE_K_<id>`.
+   - Your code files are saved in a folder structure: `NAIVE/external_MAPE_K_<id>`.
    - You have the flexibility to make direct changes to any file within this specified directory.
 
 **Note:**
@@ -316,5 +333,40 @@ Ensure that the code files adhere to the specified guidelines for seamless integ
 </details>
 
 ## Using the final result's 
-If you have downloaded the data for an experiment, the metric's data is stored in a CSV file: `Observability/Exported_metrics/exported-data-metrics_{id}` and the logs for the experiment are stored in a JSON file: `Observability/Exported_logs/exported-data-logs_{id}`.
+If you have downloaded the data for an experiment, the metric's data is stored in a CSV file: `NAVIE/Exported_metrics/exported-data-metrics_{id}` and the logs for the experiment are stored in a JSON file: `NAVIE/Exported_logs/exported-data-logs_{id}`.
  
+## Filtering the classes you want to be detected
+
+
+This code snippet, to be modified in the `process.py` file located in the `NAVIE` directory, demonstrates the process of filtering object detection results based on class IDs and confidence levels corresponding to the COCO dataset. Users can specify desired classes by adding class filters within the provided loop. Examples for detecting specific classes, such as 'crowd' (class ID 0) and 'dog' (class ID 16), are provided in the comments of the code.
+
+```
+# Loop through detected objects and filter based on confidence and class ID
+for i in range(0, len_conf):
+    # Threshold for detection confidence
+    if confidences[i] >= 0.35 : # Additional class filter to be added here
+        # Example filters (uncomment as needed):
+        # For 'crowd', class ID 0: if class_list[i] == 0:
+        # For 'dog', class ID 16: if class_list[i] == 16:
+        total_conf += confidences[i]
+        current_boxes += 1
+
+# Calculate average confidence of detected objects
+if current_boxes != 0:
+    avg_conf = total_conf / current_boxes
+else:
+    avg_conf = 0
+```
+
+## Quick Testing
+To get familiar with the tool we provide Data for testing the tool. In the directory `Quick Testing` we have provided a .zip file contaning Image's, and a .csv format Inter arrival rate file for testing purpose. 
+
+## Experimental Result's
+The conducted experiments encompassed a range of scenarios, including general object detection, crowd detection, and vehicle detection. For each of these experiments, the corresponding metric files and log files have been compiled and are available in the `Experiments` directory.
+
+The Metrics are present in the `Exported_metrics` directory within the `Experiments` directory. The metrics file's are named according to the scenarios they are tested for.
+
+The Logs are present in the `Exported_logs` directory within the `Experiments` directory. The log file's are named according to the scenarios they are tested for.
+
+## Creating a Inter arrival rate file.
+We have also provided a code that scales the `fifa1980 csv` according to the number of Images specified by the user. The code is present in the `Create_rate_file` directory and the code is self explanatory. 

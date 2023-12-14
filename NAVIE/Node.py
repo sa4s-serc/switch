@@ -73,7 +73,8 @@ def stop_process_in_terminal(file):
         print("Error:", error.decode())
 
 @app.post("/api/upload")
-async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = File(...),  approch: str = Form(...)):
+async def upload_files(zipFile: UploadFile = File(None), csvFile: UploadFile = File(...),  approch: str = Form(...), folder_location: str = Form(None)):
+
     global sys_approch
     try:
         print(approch)
@@ -84,25 +85,33 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         os.makedirs(upload_dir, exist_ok=True)
 
         # Save the uploaded files
-        zip_path = os.path.join(upload_dir, zipFile.filename)
         csv_path = os.path.join(upload_dir, csvFile.filename)
-
-        with open(zip_path, "wb") as zf:
-            shutil.copyfileobj(zipFile.file, zf)
-
         with open(csv_path, "wb") as cf:
             shutil.copyfileobj(csvFile.file, cf)
 
-        # Unzip the uploaded zip file
         unzip_dir = "unzipped"
-        shutil.rmtree(unzip_dir, ignore_errors=True)
-        os.makedirs(unzip_dir, exist_ok=True)
+        print(f"folder location is ->{folder_location}.")
 
-        with zipfile.ZipFile(zip_path, "r") as zip_ref:
-            zip_ref.extractall(unzip_dir)
+      
+        if(zipFile is not None):
+            zip_path = os.path.join(upload_dir, zipFile.filename)
+            
+            with open(zip_path, "wb") as zf:
+                shutil.copyfileobj(zipFile.file, zf)
 
-        print("Folder unzipped successfully.")
+            # Unzip the uploaded zip file
+            
+            shutil.rmtree(unzip_dir, ignore_errors=True)
+            os.makedirs(unzip_dir, exist_ok=True)
 
+            with zipfile.ZipFile(zip_path, "r") as zip_ref:
+                zip_ref.extractall(unzip_dir)
+
+            print("Folder unzipped successfully.")
+            IMAGES_FOLDER = "unzipped/"+zipFile.filename
+            IMAGES_FOLDER = IMAGES_FOLDER[:-4]
+        else:
+            IMAGES_FOLDER = folder_location
         # Perform additional logic with the unzipped folder here
 
         # Move the CSV file to the unzipped folder
@@ -111,8 +120,7 @@ async def upload_files(zipFile: UploadFile = File(...), csvFile: UploadFile = Fi
         print("CSV file saved successfully.")
 
         CSV_FILE =  "unzipped/" + csvFile.filename
-        IMAGES_FOLDER = "unzipped/"+zipFile.filename
-        IMAGES_FOLDER = IMAGES_FOLDER[:-4]
+        
         print(CSV_FILE , IMAGES_FOLDER)
 
         #API to accept user reequests
@@ -185,6 +193,23 @@ async def startDownload(data: dict):
     try:
         data_str = data.get("data")
         print(data_str)
+        # Define the folder name
+        folder_name = "Exported_metrics"
+
+        # Check if the folder exists
+        if not os.path.exists(folder_name):
+            # Create the folder
+            os.makedirs(folder_name)
+            print(f"Folder '{folder_name}' created.")
+
+        folder_name = "Exported_logs"
+
+        # Check if the folder exists
+        if not os.path.exists(folder_name):
+            # Create the folder
+            os.makedirs(folder_name)
+            print(f"Folder '{folder_name}' created.")
+
         # You can use data_str in your script as needed
         # run_as_background('python3 get_data.py')
         write_csv('final_metrics_data' , f'Exported_metrics/exported-data-metrics_{data_str}.csv')

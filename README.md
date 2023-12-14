@@ -186,9 +186,10 @@ npm run start
     - 5 single model approaches.
 
 5. Click `Upload`.
-6. Stop the process or when all images are processed, click `Stop Process`.
-7. Download data for the experiment.
-8. You can stat new experiment by clicking `New Process`
+6. Once the Dashboard is displayed, you can adjust the refresh rate by clicking on the watch icon. A dropdown menu will appear, allowing you to set the desired refresh rate.
+7. Stop the process or when all images are processed, click `Stop Process`.
+8. Download data for the experiment.
+9. You can stat new experiment by clicking `New Process`
   
 <details>
 <summary><b>Upload MAPE-K file's Guidelines</b></summary>

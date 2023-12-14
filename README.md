@@ -311,7 +311,7 @@ To effectively implement and utilize the MAPE-K framework, follow these steps:
               switch_model("yolov5l")
 
           elif (act == 5):
-              # switch model to xl
+              # Switch model to xl
               switch_model("yolov5x")
 
           print("Adaptation completed.")
@@ -351,7 +351,7 @@ for i in range(0, len_conf):
         total_conf += confidences[i]
         current_boxes += 1
 
-# Calculate average confidence of detected objects
+# Calculate the average confidence of detected objects
 if current_boxes != 0:
     avg_conf = total_conf / current_boxes
 else:
@@ -359,14 +359,14 @@ else:
 ```
 
 ## Quick Testing
-To get familiar with the tool we provide Data for testing the tool. In the directory `Quick Testing` we have provided a .zip file contaning Image's, and a .csv format Inter arrival rate file for testing purpose. 
+To get familiar with the tool we provide Data for testing the tool. In the directory `Quick Testing` we have provided a .zip file containing images, and a .csv format Inter arrival rate file for testing purposes. 
 
 ## Experimental Result's
 The conducted experiments encompassed a range of scenarios, including general object detection, crowd detection, and vehicle detection. For each of these experiments, the corresponding metric files and log files have been compiled and are available in the `Experiments` directory.
 
-The Metrics are present in the `Exported_metrics` directory within the `Experiments` directory. The metrics file's are named according to the scenarios they are tested for.
+The Metrics are present in the `Exported_metrics` directory within the `Experiments` directory. The metrics files are named according to the scenarios they are tested for.
 
-The Logs are present in the `Exported_logs` directory within the `Experiments` directory. The log file's are named according to the scenarios they are tested for.
+The Logs are present in the `Exported_logs` directory within the `Experiments` directory. The log files are named according to the scenarios they are tested for.
 
 ## Creating a Inter arrival rate file.
-We have also provided a code that scales the `fifa1980 csv` according to the number of Images specified by the user. The code is present in the `Create_rate_file` directory and the code is self explanatory. 
+We have also provided a code that scales the `wc_day53-r0-105m-l70.delta` according to the number of Images specified by the user. The code is present in the `Create_rate_file` directory and the code is self-explanatory. 

@@ -14,7 +14,7 @@ import csv
 
 models = {}
 total_processed = 0
-global_start_time = 0
+global_total_time = 0
 
 metric_file_name = "metrics.csv"
 
@@ -58,12 +58,12 @@ def get_current():
     return array[0][0]
 
 
-def process_row(im_bytes, start_time):
+def process_row(im_bytes, total_time):
 
     # run's the object detection on the received data
 
     global total_processed
-    global global_start_time
+    global global_total_time
 
     image_format = imghdr.what(None, h=im_bytes)
     if image_format is None:
@@ -72,10 +72,10 @@ def process_row(im_bytes, start_time):
 
     
     if current_model in models:
-        logger.data( {"User Request Time": start_time , 'model': current_model} )
+        logger.data( {"User Request Time": total_time , 'model': current_model} )
         try:
             if (total_processed == 0):
-                global_start_time = time.time()
+                global_total_time = time.time()
 
             im = Image.open(io.BytesIO(im_bytes))
             current_time = time.time()
@@ -104,18 +104,18 @@ def process_row(im_bytes, start_time):
                 
             t = time.time()
             current_time = t - current_time #model processsing time
-            start_time = t - start_time # total time take by image to finally output
-            absolute_time = t - global_start_time 
+            total_time = t - total_time # total time take by image to finally output
+            absolute_time = t - global_total_time 
 
             # writes the logs in a log.csv file.
             # print("To write in log file.\n")
             f = open(metric_file_name, "a")
             ts = datetime.datetime.now().isoformat()
 
-            utility = call_utility(start_time , avg_conf )
+            utility = call_utility(total_time , avg_conf )
 
             f.write(
-                f'{ts},{total_processed},{avg_conf},{current_model},{current_cpu},{current_boxes},{current_time},{start_time},{absolute_time},{utility}\n')
+                f'{ts},{total_processed},{avg_conf},{current_model},{current_cpu},{current_boxes},{current_time},{total_time},{absolute_time},{utility}\n')
             f.close()
 
             # save_result(response , total_processed-1)
@@ -157,13 +157,13 @@ def start_processing():
         if len(rows) >= 2:
             try:
                 first_row = rows[1]
-                start_time = float(rows[0][0])
-                print(start_time)
+                total_time = float(rows[0][0])
+                print(total_time)
                 first_row = [int(x) for x in first_row]
                 first_row = bytes(first_row)
 
                 # Process the first row
-                process_row(first_row, start_time)
+                process_row(first_row, total_time)
                 # Delete the first row from the CSV file
                 os.remove(image_path)
                 # Do something with the processed row
@@ -188,7 +188,7 @@ def create_or_clear_csv(file_path):
             f.truncate(0)
             # print(f"Cleared content of {file_path}")
 
-
+import shutil
 if __name__ == '__main__':
 
     models = {}
@@ -201,5 +201,22 @@ if __name__ == '__main__':
     print("Model Loaded")
     create_or_clear_csv(metric_file_name)
     # start processing the images.
+    
+    folder_path = "images"
+
+    # Check if the folder exists
+    if os.path.exists(folder_path):
+        # If it exists, remove its contents (files and subdirectories)
+        for item in os.listdir(folder_path):
+            item_path = os.path.join(folder_path, item)
+            if os.path.isfile(item_path):
+                os.remove(item_path)
+            elif os.path.isdir(item_path):
+                shutil.rmtree(item_path)
+    else:
+        # If it doesn't exist, create the folder
+        os.mkdir(folder_path)
     time.sleep(5)
     start_processing()
+
+

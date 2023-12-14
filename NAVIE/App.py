@@ -56,20 +56,20 @@ if __name__ == '__main__':
     parser.add_argument('--port', default=port, type=int, help='port number')
     opt = parser.parse_args()
 
-    folder_path = "images"
+    # folder_path = "images"
 
-    # Check if the folder exists
-    if os.path.exists(folder_path):
-        # If it exists, remove its contents (files and subdirectories)
-        for item in os.listdir(folder_path):
-            item_path = os.path.join(folder_path, item)
-            if os.path.isfile(item_path):
-                os.remove(item_path)
-            elif os.path.isdir(item_path):
-                shutil.rmtree(item_path)
-    else:
-        # If it doesn't exist, create the folder
-        os.mkdir(folder_path)
+    # # Check if the folder exists
+    # if os.path.exists(folder_path):
+    #     # If it exists, remove its contents (files and subdirectories)
+    #     for item in os.listdir(folder_path):
+    #         item_path = os.path.join(folder_path, item)
+    #         if os.path.isfile(item_path):
+    #             os.remove(item_path)
+    #         elif os.path.isdir(item_path):
+    #             shutil.rmtree(item_path)
+    # else:
+    #     # If it doesn't exist, create the folder
+    #     os.mkdir(folder_path)
 
 
     uvicorn.run(app, host='0.0.0.0', port=opt.port)

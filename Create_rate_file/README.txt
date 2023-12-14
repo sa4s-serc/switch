@@ -1,6 +1,3 @@
-clarknet-http-105m-l70.delta:
-This dataset is derived from ClarkNet - HTTP dataset available at http://ita.ee.lbl.gov/html/contrib/ClarkNet-HTTP.html.
-
 wc_day53-r0-105m-l70.delta:
 This dataset is derived from  [M. Arlitt and T. Jin, "1998 World Cup Web Site Access Logs", August 1998. Available at http://ita.ee.lbl.gov/html/contrib/WorldCup.html].  The 1998 World Cup Web Site Access Logs are made available under the following license:
  

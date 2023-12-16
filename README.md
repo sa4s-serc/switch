@@ -332,6 +332,11 @@ Ensure that the code files adhere to the specified guidelines for seamless integ
 
 </details>
 
+## Stoping the Application
+Stoping the application, it is necessary to terminate the associated processes executing in each of the three designated terminals. This involves the cessation of the 'Docker-compose' process in the first terminal, the termination of the 'Node.py' script in the second terminal, and the halting of the 'frontend' process in the third terminal. This can be done by pressign `Ctrl+C` in each terminal
+
+
+
 ## Using the final result's 
 If you have downloaded the data for an experiment, the metric's data is stored in a CSV file: `NAVIE/Exported_metrics/exported-data-metrics_{id}` and the logs for the experiment are stored in a JSON file: `NAVIE/Exported_logs/exported-data-logs_{id}`.
  

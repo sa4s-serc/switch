@@ -1,6 +1,6 @@
-# Switch: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
+# SWITCH: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
 
-"observability-main", an exemplar developed to enhance self-adaptive capabilities in Machine Learning-Enabled Systems, through dynamic model observability-maining in runtime.  "observability-main" is designed as a comprehensive web service, catering to a broad range of ML scenarios, with its implementation demonstrated through an object detection use case.
+"SWITCH", an exemplar developed to enhance self-adaptive capabilities in Machine Learning-Enabled Systems, through dynamic model SWITCHing in runtime.  "SWITCH" is designed as a comprehensive web service, catering to a broad range of ML scenarios, with its implementation demonstrated through an object detection use case.
 
 ## Getting started
 
@@ -51,16 +51,18 @@ Video for steps of intallation and running the application can be found in:
 
 > Directory: `Video Demonstration`
 
-> The link:
-https://drive.google.com/drive/folders/1eGY1QGXpP4FYkav2G2uusmV6QSHVnoVx?usp=sharing
+> Link:
+1. Youtube: https://youtu.be/ZIDE1v3jxeQ
+
+2. Google Drive: https://drive.google.com/drive/folders/1eGY1QGXpP4FYkav2G2uusmV6QSHVnoVx?usp=sharing  
 
 If using a zip file for installation:
 
-> Extract the observability-main folder.
+> Extract the SWITCH folder.
 
->If not already in the directory `observability-main` directory, use command from the extracted directory:
+>If not already in the directory `SWITCH` directory, use command from the extracted directory:
 ```bash
-cd observability-main
+cd SWITCH
 ```
 
 
@@ -137,7 +139,7 @@ python3 process_model.py
 
 Ensure `docker-compose.yml` is running:
 
-If not running, run following command from directory `observability-main`
+If not running, run following command from directory `SWITCH`
 ```bash
 docker-compose up
 ```
@@ -150,13 +152,13 @@ source venv/bin/activate
 ```
 
 
-Run the backend first for the application from the directory `observability-main/NAVIE`:
+Run the backend first for the application from the directory `SWITCH/NAVIE`:
 
 ```
 python3 Node.py
 ```
 
-Run the React-Application from the directory `observability-main` :
+Run the React-Application from the directory `SWITCH` :
 
 ```
 npm run start
@@ -278,39 +280,39 @@ To effectively implement and utilize the MAPE-K framework, follow these steps:
    - Implementation: Include logic to determine the adaptation step.
 
  - **`Execute.py`:**
-   - Description: Executes the model observability-main.
-   - Guidelines: Refer to the code below for model observability-maining.
-   - Implementation: Integrate the necessary logic to perform the model observability-main.
+   - Description: Executes the model switch.
+   - Guidelines: Refer to the code below for model switching.
+   - Implementation: Integrate the necessary logic to perform the model switch.
 
     <details>
-    <summary><b>Model observability-maining code</b></summary>
+    <summary><b>Model switching code</b></summary>
 
-        def observability-main_model(model_name):
+        def switch_model(model_name):
           f = open("../model.csv", "w")
           f.write(model_name)
           f.close()
       
         def perform_action(act):
-          # model observability-main takes place by changing the model name in the model.csv file .
+          # model switch takes place by changing the model name in the model.csv file .
           if (act == 1):
-              # observability-main model to n
-              observability-main_model("YOLOv5n")
+              # switch model to n
+              switch_model("YOLOv5n")
 
           elif (act == 2):
-              # observability-main model to s
-              observability-main_model("YOLOv5s")
+              # switch model to s
+              switch_model("YOLOv5s")
 
           elif (act == 3):
-              # observability-main model to m
-              observability-main_model("YOLOv5m")
+              # switch model to m
+              switch_model("YOLOv5m")
 
           elif (act == 4):
-              # observability-main model to l
-              observability-main_model("YOLOv5l")
+              # switch model to l
+              switch_model("YOLOv5l")
 
           elif (act == 5):
-              # observability-main model to xl
-              observability-main_model("YOLOv5x")
+              # switch model to xl
+              switch_model("YOLOv5x")
 
           print("Adaptation completed.")
     </details>

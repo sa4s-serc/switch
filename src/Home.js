@@ -175,7 +175,7 @@ const Home = () => {
   return (
     <div className="container mt-3 ">
       {!showDashBoard && <div>
-        <h1 className="mb-3">Switch: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems</h1>
+        <h1 className="mb-3">SWITCH: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems</h1>
         <div className="mb-3">
           <label htmlFor="zipFileInput" className="form-label">
             Upload a .zip file, for folder contaning images, the .zip file must have same name as the Image folder.

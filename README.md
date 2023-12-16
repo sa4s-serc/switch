@@ -1,4 +1,4 @@
-# observability-main: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
+# Switch: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
 
 "observability-main", an exemplar developed to enhance self-adaptive capabilities in Machine Learning-Enabled Systems, through dynamic model observability-maining in runtime.  "observability-main" is designed as a comprehensive web service, catering to a broad range of ML scenarios, with its implementation demonstrated through an object detection use case.
 

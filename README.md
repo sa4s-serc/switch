@@ -1,10 +1,10 @@
-# Switch: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
+# observability-main: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems
 
-"Switch", an exemplar developed to enhance self-adaptive capabilities in Machine Learning-Enabled Systems, through dynamic model switching in runtime.  "Switch" is designed as a comprehensive web service, catering to a broad range of ML scenarios, with its implementation demonstrated through an object detection use case.
+"observability-main", an exemplar developed to enhance self-adaptive capabilities in Machine Learning-Enabled Systems, through dynamic model observability-maining in runtime.  "observability-main" is designed as a comprehensive web service, catering to a broad range of ML scenarios, with its implementation demonstrated through an object detection use case.
 
 ## Getting started
 
-The system comprises distinct components, including a frontend written in React, a backend powered by FAST API in Python, and Elasticsearch serving as the database. Will be using YOLOv5 as object detection model .
+The system comprises distinct components, including a frontend written in React, a backend powered by FAST API in Python, and Elasticsearch serving as the database. Will be using YOLOv5u as object detection model .
 
 
 
@@ -47,21 +47,18 @@ The system comprises distinct components, including a frontend written in React,
   
 ## Installation
 
-Clone the GitHub repository:
+Video for steps of intallation and running the application can be found in:
 
-```bash
-git clone https://github.com/sa4s-serc/observability.git
-```
+> Directory: `Video Demonstration`
 
-```bash
-cd observability
-```
+> The link:
+https://drive.google.com/drive/folders/1eGY1QGXpP4FYkav2G2uusmV6QSHVnoVx?usp=sharing
 
 If using a zip file for installation:
 
 > Extract the observability-main folder.
 
->From the extracted directory, use command:
+>If not already in the directory `observability-main` directory, use command from the extracted directory:
 ```bash
 cd observability-main
 ```
@@ -140,7 +137,7 @@ python3 process_model.py
 
 Ensure `docker-compose.yml` is running:
 
-If not running, run following command from directory `observability`
+If not running, run following command from directory `observability-main`
 ```bash
 docker-compose up
 ```
@@ -153,13 +150,13 @@ source venv/bin/activate
 ```
 
 
-Run the backend first for the application from the directory `observability/NAVIE`:
+Run the backend first for the application from the directory `observability-main/NAVIE`:
 
 ```
 python3 Node.py
 ```
 
-Run the React-Application from the directory `observability` :
+Run the React-Application from the directory `observability-main` :
 
 ```
 npm run start
@@ -281,39 +278,39 @@ To effectively implement and utilize the MAPE-K framework, follow these steps:
    - Implementation: Include logic to determine the adaptation step.
 
  - **`Execute.py`:**
-   - Description: Executes the model switch.
-   - Guidelines: Refer to the code below for model switching.
-   - Implementation: Integrate the necessary logic to perform the model switch.
+   - Description: Executes the model observability-main.
+   - Guidelines: Refer to the code below for model observability-maining.
+   - Implementation: Integrate the necessary logic to perform the model observability-main.
 
     <details>
-    <summary><b>Model Switching code</b></summary>
+    <summary><b>Model observability-maining code</b></summary>
 
-        def switch_model(model_name):
+        def observability-main_model(model_name):
           f = open("../model.csv", "w")
           f.write(model_name)
           f.close()
       
         def perform_action(act):
-          # model switch takes place by changing the model name in the model.csv file .
+          # model observability-main takes place by changing the model name in the model.csv file .
           if (act == 1):
-              # switch model to n
-              switch_model("yolov5n")
+              # observability-main model to n
+              observability-main_model("YOLOv5n")
 
           elif (act == 2):
-              # switch model to s
-              switch_model("yolov5s")
+              # observability-main model to s
+              observability-main_model("YOLOv5s")
 
           elif (act == 3):
-              # switch model to m
-              switch_model("yolov5m")
+              # observability-main model to m
+              observability-main_model("YOLOv5m")
 
           elif (act == 4):
-              # switch model to l
-              switch_model("yolov5l")
+              # observability-main model to l
+              observability-main_model("YOLOv5l")
 
           elif (act == 5):
-              # Switch model to xl
-              switch_model("yolov5x")
+              # observability-main model to xl
+              observability-main_model("YOLOv5x")
 
           print("Adaptation completed.")
     </details>
@@ -368,6 +365,9 @@ The conducted experiments encompassed a range of scenarios, including general ob
 The Metrics are present in the `Exported_metrics` directory within the `Experiments` directory. The metrics files are named according to the scenarios they are tested for.
 
 The Logs are present in the `Exported_logs` directory within the `Experiments` directory. The log files are named according to the scenarios they are tested for.
+
+The Images used for Experiment purposes along with inter arrival rate file can be found in the Drive folder:
+https://drive.google.com/drive/folders/1MpaJm6-D0xi3xBcf_D_rr5zqsvoSIiro?usp=sharing
 
 ## Creating a Inter arrival rate file.
 We have also provided a code that scales the `wc_day53-r0-105m-l70.delta` according to the number of Images specified by the user. The code is present in the `Create_rate_file` directory and the code is self-explanatory. 
